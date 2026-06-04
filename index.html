@@ -1,0 +1,2367 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REFORMASI 1998 — Arsip Sinematik Interaktif</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Special+Elite&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        box-sizing: border-box;
+      }
+    </style>
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <!-- Cursor -->
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+    <div id="cursor-trail"></div>
+    <!-- Grain overlay -->
+    <div id="grain"></div>
+    <!-- Fog layers -->
+    <div id="fog">
+      <div class="fog-layer"></div>
+      <div class="fog-layer"></div>
+    </div>
+    <!-- Ambient particles -->
+    <div id="particles"></div>
+    <!-- Transition overlay -->
+    <div id="transition-overlay"></div>
+    <!-- TOP NAVIGATION -->
+    <nav id="topnav">
+      <div class="topnav-logo" onclick="showPage('home')">
+        REFORMASI <span>1998</span>
+      </div>
+      <div class="topnav-links">
+        <button
+          class="topnav-btn active"
+          data-page="home"
+          onclick="showPage('home')"
+        >
+          Beranda
+        </button>
+        <button
+          class="topnav-btn"
+          data-page="materi"
+          onclick="window.location.href = 'materi.html'"
+        >
+          Materi
+        </button>
+        <button
+          class="topnav-btn"
+          data-page="about"
+          onclick="window.location.href = 'aboutus.html'"
+        >
+          About Us
+        </button>
+      </div>
+    </nav>
+    <!-- Navigation dots -->
+    <div id="nav-dots">
+      <div
+        class="nav-dot active"
+        data-section="intro"
+        data-label="Pembuka"
+      ></div>
+      <div class="nav-dot" data-section="konteks" data-label="Konteks"></div>
+      <div
+        class="nav-dot"
+        data-section="demonstrasi"
+        data-label="Demonstrasi"
+      ></div>
+      <div
+        class="nav-dot"
+        data-section="peralihan"
+        data-label="Peralihan"
+      ></div>
+      <div class="nav-dot" data-section="warisan" data-label="Warisan"></div>
+    </div>
+    <!-- ======= PAGE: HOME ======= -->
+    <div id="page-home" class="page active">
+      <!-- ======= SECTION 1: INTRO ======= -->
+      <section id="intro">
+        <div class="intro-bg-collage">
+          <!-- Archival photo — simulated crowd -->
+          <div class="archive-photo photo-crowd" style="--r: -4deg">
+            <svg
+              class="crowd-svg"
+              viewBox="0 0 380 240"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect width="380" height="240" fill="#0d0b05" />
+              <rect y="140" width="380" height="100" fill="#1a1005" />
+              <!-- crowd silhouettes -->
+              <g fill="#080602" opacity="0.9">
+                <!-- Row of silhouettes -->
+                <ellipse cx="20" cy="175" rx="14" ry="30" opacity="0.9" />
+                <circle cx="20" cy="148" r="10" />
+                <ellipse cx="45" cy="172" rx="13" ry="28" />
+                <circle cx="45" cy="146" r="9" />
+                <ellipse cx="70" cy="178" rx="15" ry="32" />
+                <circle cx="70" cy="149" r="11" />
+                <ellipse cx="95" cy="174" rx="12" ry="27" />
+                <circle cx="95" cy="149" r="9" />
+                <ellipse cx="118" cy="177" rx="14" ry="30" />
+                <circle cx="118" cy="150" r="10" />
+                <ellipse cx="142" cy="173" rx="13" ry="28" />
+                <circle cx="142" cy="148" r="9" />
+                <ellipse cx="165" cy="176" rx="15" ry="31" />
+                <circle cx="165" cy="148" r="11" />
+                <ellipse cx="190" cy="172" rx="12" ry="26" />
+                <circle cx="190" cy="148" r="9" />
+                <ellipse cx="213" cy="175" rx="14" ry="30" />
+                <circle cx="213" cy="149" r="10" />
+                <ellipse cx="237" cy="171" rx="13" ry="28" />
+                <circle cx="237" cy="146" r="9" />
+                <ellipse cx="260" cy="177" rx="15" ry="32" />
+                <circle cx="260" cy="148" r="11" />
+                <ellipse cx="283" cy="174" rx="12" ry="27" />
+                <circle cx="283" cy="149" r="9" />
+                <ellipse cx="306" cy="178" rx="14" ry="31" />
+                <circle cx="306" cy="150" r="10" />
+                <ellipse cx="329" cy="173" rx="13" ry="28" />
+                <circle cx="329" cy="148" r="9" />
+                <ellipse cx="353" cy="176" rx="15" ry="30" />
+                <circle cx="353" cy="149" r="11" />
+                <ellipse cx="376" cy="172" rx="12" ry="26" />
+                <circle cx="376" cy="148" r="9" />
+              </g>
+              <!-- banners / signs -->
+              <g fill="#2a1a08" opacity="0.7">
+                <rect x="55" y="110" width="30" height="18" rx="1" />
+                <rect x="54" y="108" width="2" height="40" />
+                <rect x="150" y="105" width="40" height="20" rx="1" />
+                <rect x="149" y="103" width="2" height="45" />
+                <rect x="250" y="108" width="35" height="18" rx="1" />
+                <rect x="249" y="106" width="2" height="42" />
+                <rect x="320" y="112" width="28" height="16" rx="1" />
+                <rect x="319" y="110" width="2" height="38" />
+              </g>
+              <!-- text on banners -->
+              <text
+                x="70"
+                y="122"
+                fill="#c8a97e"
+                font-size="5"
+                font-family="serif"
+                text-anchor="middle"
+                opacity="0.6"
+              >
+                REFORMASI
+              </text>
+              <text
+                x="170"
+                y="117"
+                fill="#c8a97e"
+                font-size="4.5"
+                font-family="serif"
+                text-anchor="middle"
+                opacity="0.6"
+              >
+                TURUNKAN SOEHARTO
+              </text>
+              <text
+                x="267"
+                y="119"
+                fill="#c8a97e"
+                font-size="4"
+                font-family="serif"
+                text-anchor="middle"
+                opacity="0.5"
+              >
+                MAHASISWA
+              </text>
+              <!-- sky gradient -->
+              <rect width="380" height="140" fill="url(#skyGrad)" />
+              <defs>
+                <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#080600" />
+                  <stop offset="60%" stop-color="#120e05" />
+                  <stop offset="100%" stop-color="#1a1508" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+              <!-- smoke/haze -->
+              <ellipse
+                cx="190"
+                cy="100"
+                rx="200"
+                ry="40"
+                fill="#1a1005"
+                opacity="0.4"
+              />
+              <ellipse
+                cx="100"
+                cy="80"
+                rx="100"
+                ry="30"
+                fill="#0d0b03"
+                opacity="0.3"
+              />
+            </svg>
+          </div>
+          <!-- Parliament building silhouette -->
+          <div class="archive-photo photo-parliament" style="--r: 3deg">
+            <svg
+              viewBox="0 0 290 200"
+              xmlns="http://www.w3.org/2000/svg"
+              style="width: 100%; height: 100%; display: block"
+            >
+              <rect width="290" height="200" fill="#0a0805" />
+              <rect y="130" width="290" height="70" fill="#080602" />
+              <!-- Building -->
+              <rect x="45" y="70" width="200" height="70" fill="#120e05" />
+              <!-- dome -->
+              <ellipse cx="145" cy="70" rx="50" ry="35" fill="#1a1508" />
+              <!-- columns -->
+              <g fill="#0a0805">
+                <rect x="55" y="90" width="12" height="50" />
+                <rect x="80" y="90" width="12" height="50" />
+                <rect x="105" y="90" width="12" height="50" />
+                <rect x="130" y="90" width="12" height="50" />
+                <rect x="155" y="90" width="12" height="50" />
+                <rect x="180" y="90" width="12" height="50" />
+                <rect x="205" y="90" width="12" height="50" />
+                <rect x="225" y="90" width="12" height="50" />
+              </g>
+              <!-- flag on dome -->
+              <line
+                x1="145"
+                y1="35"
+                x2="145"
+                y2="60"
+                stroke="#c8a97e"
+                stroke-width="1"
+                opacity="0.6"
+              />
+              <rect
+                x="145"
+                y="35"
+                width="18"
+                height="10"
+                fill="#8b1a1a"
+                opacity="0.7"
+              />
+              <rect
+                x="145"
+                y="45"
+                width="18"
+                height="5"
+                fill="#f2e8d5"
+                opacity="0.5"
+              />
+              <!-- sky -->
+              <rect width="290" height="80" fill="url(#parSky)" />
+              <defs>
+                <linearGradient id="parSky" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#060504" />
+                  <stop offset="100%" stop-color="#0a0805" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <!-- Street scene -->
+          <div class="archive-photo photo-street" style="--r: 2deg">
+            <svg
+              viewBox="0 0 340 220"
+              xmlns="http://www.w3.org/2000/svg"
+              style="width: 100%; height: 100%; display: block"
+            >
+              <rect width="340" height="220" fill="#0d0b05" />
+              <!-- street -->
+              <rect x="0" y="160" width="340" height="60" fill="#0a0803" />
+              <!-- buildings background -->
+              <rect x="0" y="40" width="80" height="130" fill="#080604" />
+              <rect x="85" y="60" width="60" height="110" fill="#0a0805" />
+              <rect x="200" y="30" width="90" height="140" fill="#080604" />
+              <rect x="280" y="50" width="60" height="120" fill="#0a0805" />
+              <!-- windows -->
+              <g fill="#1a1205" opacity="0.6">
+                <rect x="10" y="55" width="8" height="6" />
+                <rect x="25" y="55" width="8" height="6" />
+                <rect x="40" y="55" width="8" height="6" />
+                <rect x="10" y="70" width="8" height="6" />
+                <rect x="25" y="70" width="8" height="6" />
+                <rect x="210" y="45" width="10" height="7" />
+                <rect x="228" y="45" width="10" height="7" />
+                <rect x="246" y="45" width="10" height="7" />
+                <rect x="210" y="60" width="10" height="7" />
+                <rect x="228" y="60" width="10" height="7" />
+              </g>
+              <!-- fire/burning -->
+              <ellipse
+                cx="160"
+                cy="155"
+                rx="20"
+                ry="8"
+                fill="#2a1005"
+                opacity="0.8"
+              />
+              <ellipse
+                cx="160"
+                cy="148"
+                rx="12"
+                ry="12"
+                fill="#1a0a02"
+                opacity="0.6"
+              />
+              <ellipse
+                cx="160"
+                cy="140"
+                rx="8"
+                ry="15"
+                fill="#120802"
+                opacity="0.5"
+              />
+              <!-- smoke column -->
+              <ellipse
+                cx="160"
+                cy="110"
+                rx="18"
+                ry="25"
+                fill="#0a0805"
+                opacity="0.7"
+              />
+              <ellipse
+                cx="155"
+                cy="75"
+                rx="25"
+                ry="30"
+                fill="#080605"
+                opacity="0.5"
+              />
+              <!-- crowd at bottom -->
+              <g fill="#050403" opacity="0.9">
+                <ellipse cx="30" cy="180" rx="10" ry="20" />
+                <circle cx="30" cy="163" r="7" />
+                <ellipse cx="65" cy="178" rx="11" ry="22" />
+                <circle cx="65" cy="159" r="8" />
+                <ellipse cx="100" cy="182" rx="10" ry="20" />
+                <circle cx="100" cy="165" r="7" />
+                <ellipse cx="230" cy="179" rx="10" ry="20" />
+                <circle cx="230" cy="162" r="7" />
+                <ellipse cx="265" cy="177" rx="11" ry="22" />
+                <circle cx="265" cy="158" r="8" />
+                <ellipse cx="300" cy="181" rx="10" ry="20" />
+                <circle cx="300" cy="164" r="7" />
+              </g>
+            </svg>
+          </div>
+          <!-- Habibie portrait style -->
+          <div class="archive-photo photo-habibie" style="--r: -3deg">
+            <svg
+              viewBox="0 0 220 300"
+              xmlns="http://www.w3.org/2000/svg"
+              style="width: 100%; height: 100%; display: block"
+            >
+              <rect width="220" height="300" fill="#0d0b05" />
+              <!-- figure silhouette -->
+              <ellipse cx="110" cy="90" rx="35" ry="45" fill="#1a1508" />
+              <rect x="60" y="125" width="100" height="160" fill="#181205" />
+              <!-- suit details -->
+              <path
+                d="M110 125 L80 160 L60 170 L60 285 L160 285 L160 170 L140 160 Z"
+                fill="#120e05"
+              />
+              <!-- tie suggestion -->
+              <path d="M105 125 L115 125 L112 180 L108 180 Z" fill="#0a0805" />
+              <!-- collar -->
+              <path
+                d="M90 125 L110 140 L130 125"
+                fill="none"
+                stroke="#1a1508"
+                stroke-width="3"
+              />
+              <!-- face features -->
+              <ellipse cx="110" cy="85" rx="25" ry="30" fill="#1a1508" />
+              <ellipse cx="100" cy="80" rx="6" ry="5" fill="#0d0b05" />
+              <ellipse cx="120" cy="80" rx="6" ry="5" fill="#0d0b05" />
+              <!-- background texture -->
+              <rect width="220" height="300" fill="url(#portraitGrad)" />
+              <defs>
+                <radialGradient id="portraitGrad" cx="50%" cy="30%">
+                  <stop offset="0%" stop-color="#1a1508" stop-opacity="0" />
+                  <stop offset="100%" stop-color="#050402" stop-opacity="0.6" />
+                </radialGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <div class="intro-overlay"></div>
+        <!-- Floating paper pieces -->
+        <div
+          class="paper-piece"
+          style="top: 15%; left: 20%; --pr: -5deg; --pd: 0s"
+        >
+          ORDE BARU • 1967–1998
+        </div>
+        <div
+          class="paper-piece"
+          style="top: 25%; right: 25%; --pr: 3deg; --pd: 2s"
+        >
+          KRISIS MONETER
+        </div>
+        <div
+          class="paper-piece"
+          style="bottom: 30%; left: 30%; --pr: -2deg; --pd: 4s"
+        >
+          MAHASISWA BERSATU
+        </div>
+        <div
+          class="paper-piece"
+          style="bottom: 25%; right: 20%; --pr: 6deg; --pd: 1s"
+        >
+          TRISAKTI • MEI 1998
+        </div>
+        <!-- Sticky notes -->
+        <div class="sticky-note" style="top: 12%; right: 8%; --sn: 2deg">
+          Dokumen arsip negara — disimpan sejak 1998
+        </div>
+        <div class="sticky-note" style="bottom: 20%; left: 5%; --sn: -3deg">
+          Koleksi foto jurnalis
+        </div>
+        <div class="intro-content">
+          <div class="intro-date">21 Mei 1998 — Jakarta, Indonesia</div>
+          <div class="intro-title">
+            <span>Reformasi</span>
+            <span class="year glitch-text" data-text="1998">1998</span>
+          </div>
+          <div class="intro-subtitle">
+            Ketika Rupiah Jatuh, Indonesia Berubah
+          </div>
+        </div>
+        <div class="scroll-hint">
+          <span>Gulir ke bawah</span>
+          <div class="scroll-line"></div>
+        </div>
+      </section>
+      <!-- NEWSBAR -->
+      <div class="newsbar">
+        <span class="newsbar-inner">
+          ★ 21 MEI 1998: SOEHARTO MENGUNDURKAN DIRI SETELAH 32 TAHUN BERKUASA ★
+          B.J. HABIBIE DILANTIK SEBAGAI PRESIDEN KE-3 RI ★ RIBUAN MAHASISWA
+          MENDUDUKI GEDUNG DPR/MPR ★ KRISIS EKONOMI 1997–1998 MENGGUNCANG
+          INDONESIA ★ EMPAT MAHASISWA TRISAKTI GUGUR 12 MEI 1998 ★ KERUSUHAN MEI
+          MELANDA JAKARTA ★ TUNTUTAN REFORMASI BERGEMA DI SELURUH NUSANTARA ★ 21
+          MEI 1998: SOEHARTO MENGUNDURKAN DIRI SETELAH 32 TAHUN BERKUASA ★ B.J.
+          HABIBIE DILANTIK SEBAGAI PRESIDEN KE-3 RI ★ RIBUAN MAHASISWA MENDUDUKI
+          GEDUNG DPR/MPR ★ KRISIS EKONOMI 1997–1998 MENGGUNCANG INDONESIA ★
+          EMPAT MAHASISWA TRISAKTI GUGUR 12 MEI 1998 ★ KERUSUHAN MEI MELANDA
+          JAKARTA ★ TUNTUTAN REFORMASI BERGEMA DI SELURUH NUSANTARA ★
+        </span>
+      </div>
+      <!-- ======= SECTION 2: KONTEKS ======= -->
+      <section id="konteks">
+        <div class="chapter-header reveal">
+          <div class="chapter-num">Bab I</div>
+          <h2 class="chapter-title">Retaknya<br />Orde Baru</h2>
+        </div>
+        <div class="collage-grid">
+          <!-- Cell 1: Economic crisis -->
+          <div class="collage-cell reveal-left">
+            <div
+              class="cell-img-bg"
+              style="height: 300px; position: relative; overflow: hidden"
+            >
+              <img
+                src="ekonomi 97.webp"
+                alt="Krisis Ekonomi"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  display: block;
+                  object-fit: cover;
+                "
+              />
+            </div>
+            <div class="cell-date">1997</div>
+            <div class="cell-overlay">
+              <div class="cell-label">Krisis Ekonomi</div>
+              <div class="cell-desc">
+                Nilai rupiah anjlok drastis, harga kebutuhan pokok melonjak, dan
+                ribuan perusahaan mulai runtuh.
+              </div>
+            </div>
+          </div>
+          <!-- Cell 2: 32 years rule -->
+          <div class="collage-cell reveal">
+            <div
+              class="cell-img-bg"
+              style="height: 300px; position: relative; overflow: hidden"
+            >
+              <img
+                src="mahasiswa 98.jpg"
+                alt="Gelombang Mahasiswa"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  display: block;
+                  object-fit: cover;
+                "
+              />
+            </div>
+            <div class="cell-date">Mei 1998</div>
+            <div class="cell-overlay">
+              <div class="cell-label">Gelombang Mahasiswa</div>
+              <div class="cell-desc">
+                Demonstrasi besar-besaran muncul di berbagai daerah sebagai
+                bentuk tuntutan reformasi dan perubahan pemerintahan.
+              </div>
+            </div>
+          </div>
+          <!-- Cell 3: International pressure -->
+          <div class="collage-cell reveal-right">
+            <div
+              class="cell-img-bg"
+              style="height: 300px; position: relative; overflow: hidden"
+            >
+              <img
+                src="soharto turun 98.webp"
+                alt="Krisis Kepercayaan"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  display: block;
+                  object-fit: cover;
+                "
+              />
+            </div>
+            <div class="cell-date">21 Mei 1998</div>
+            <div class="cell-overlay">
+              <div class="cell-label">Krisis Kepercayaan</div>
+              <div class="cell-desc">
+                Masyarakat mulai kehilangan kepercayaan terhadap pemerintahan
+                Orde Baru akibat korupsi, kolusi, dan nepotisme.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-block reveal">
+          <p>
+            Menjelang tahun 1998, Indonesia berada dalam kondisi yang tidak
+            stabil. Krisis ekonomi Asia menyebabkan nilai rupiah melemah tajam
+            dan memicu kenaikan harga barang secara besar-besaran. Di saat yang
+            sama, ketidakpuasan masyarakat terhadap pemerintahan Orde Baru terus
+            meningkat. Tekanan ekonomi, praktik KKN (Korupsi, Kolusi, dan
+            Nepotisme), serta terbatasnya kebebasan berpendapat memunculkan
+            gelombang demonstrasi mahasiswa di berbagai daerah.
+          </p>
+          <div class="pull-quote">
+            "Di balik runtuhnya kekuasaan, lahirlah harapan baru bagi demokrasi
+            Indonesia.” — Sejarawan Indonesia
+          </div>
+          <p>
+            Situasi tersebut menjadi awal lahirnya Era Reformasi di Indonesia.
+            Reformasi 1998 menjadi titik penting dalam sejarah Indonesia.
+            Peristiwa ini tidak hanya mengubah sistem pemerintahan, tetapi juga
+            memengaruhi kehidupan sosial, politik, dan ekonomi masyarakat hingga
+            saat ini.
+          </p>
+        </div>
+      </section>
+      <!-- NEWSBAR 2 -->
+      <div class="newsbar">
+        <span class="newsbar-inner">
+          ◆ KOMPAS — "RUPIAH CAPAI LEVEL TERENDAH SEPANJANG SEJARAH" ◆ SUARA
+          PEMBARUAN — "RIBUAN MAHASISWA TURUN KE JALAN" ◆ TEMPO — "SOEHARTO:
+          SAYA AKAN MUNDUR SETELAH REFORMASI" ◆ REPUBLIKA — "EMPAT MAHASISWA
+          TRISAKTI GUGUR DITEMBAK" ◆ MEDIA INDONESIA — "API MEMBAKAR PUSAT
+          PERBELANJAAN DI JAKARTA" ◆ KOMPAS — "RUPIAH CAPAI LEVEL TERENDAH
+          SEPANJANG SEJARAH" ◆ SUARA PEMBARUAN — "RIBUAN MAHASISWA TURUN KE
+          JALAN" ◆ TEMPO — "SOEHARTO: SAYA AKAN MUNDUR SETELAH REFORMASI" ◆
+          REPUBLIKA — "EMPAT MAHASISWA TRISAKTI GUGUR DITEMBAK" ◆ MEDIA
+          INDONESIA — "API MEMBAKAR PUSAT PERBELANJAAN DI JAKARTA" ◆
+        </span>
+      </div>
+      <!-- ======= SECTION 3: DEMONSTRASI ======= -->
+      <section id="demonstrasi">
+        <div class="demo-hero">
+          <div class="demo-bg" style="width: 100%; height: 120%">
+            <svg
+              viewBox="0 0 1200 700"
+              xmlns="http://www.w3.org/2000/svg"
+              style="width: 100%; height: 100%; display: block"
+            >
+              <rect width="1200" height="700" fill="#080604" />
+              <!-- mass crowd from above -->
+              <rect y="300" width="1200" height="400" fill="#0a0805" />
+              <!-- sky with smoke -->
+              <rect width="1200" height="350" fill="url(#heroSky)" />
+              <!-- buildings silhouette -->
+              <rect x="0" y="150" width="100" height="200" fill="#050403" />
+              <rect x="110" y="200" width="80" height="150" fill="#060504" />
+              <rect x="200" y="120" width="120" height="230" fill="#050403" />
+              <rect x="330" y="180" width="70" height="170" fill="#060504" />
+              <rect x="900" y="140" width="110" height="210" fill="#050403" />
+              <rect x="1020" y="170" width="90" height="180" fill="#060504" />
+              <rect x="1100" y="100" width="100" height="250" fill="#050403" />
+              <!-- parliament building center -->
+              <rect x="450" y="160" width="300" height="190" fill="#080604" />
+              <ellipse cx="600" cy="160" rx="70" ry="50" fill="#0a0805" />
+              <rect x="470" y="200" width="260" height="150" fill="#060504" />
+              <!-- crowd mass -->
+              <g opacity="0.9">
+                <!-- Row 1 -->
+                <g fill="#030302">
+                  <ellipse cx="50" cy="380" rx="15" ry="35" />
+                  <circle cx="50" cy="347" r="12" />
+                  <ellipse cx="95" cy="376" rx="14" ry="33" />
+                  <circle cx="95" cy="345" r="11" />
+                  <ellipse cx="138" cy="382" rx="15" ry="36" />
+                  <circle cx="138" cy="348" r="12" />
+                  <ellipse cx="182" cy="378" rx="13" ry="32" />
+                  <circle cx="182" cy="348" r="10" />
+                  <ellipse cx="224" cy="384" rx="15" ry="35" />
+                  <circle cx="224" cy="351" r="12" />
+                  <ellipse cx="268" cy="379" rx="14" ry="33" />
+                  <circle cx="268" cy="348" r="11" />
+                  <ellipse cx="312" cy="381" rx="13" ry="34" />
+                  <circle cx="312" cy="349" r="10" />
+                  <ellipse cx="356" cy="377" rx="15" ry="35" />
+                  <circle cx="356" cy="344" r="12" />
+                  <ellipse cx="400" cy="383" rx="14" ry="33" />
+                  <circle cx="400" cy="352" r="11" />
+                  <ellipse cx="760" cy="380" rx="15" ry="35" />
+                  <circle cx="760" cy="347" r="12" />
+                  <ellipse cx="804" cy="376" rx="14" ry="33" />
+                  <circle cx="804" cy="345" r="11" />
+                  <ellipse cx="848" cy="382" rx="15" ry="36" />
+                  <circle cx="848" cy="348" r="12" />
+                  <ellipse cx="892" cy="378" rx="13" ry="32" />
+                  <circle cx="892" cy="348" r="10" />
+                  <ellipse cx="936" cy="384" rx="15" ry="35" />
+                  <circle cx="936" cy="351" r="12" />
+                  <ellipse cx="980" cy="379" rx="14" ry="33" />
+                  <circle cx="980" cy="348" r="11" />
+                  <ellipse cx="1024" cy="381" rx="13" ry="34" />
+                  <circle cx="1024" cy="349" r="10" />
+                  <ellipse cx="1068" cy="377" rx="15" ry="35" />
+                  <circle cx="1068" cy="344" r="12" />
+                  <ellipse cx="1112" cy="383" rx="14" ry="33" />
+                  <circle cx="1112" cy="352" r="11" />
+                  <ellipse cx="1156" cy="380" rx="12" ry="30" />
+                  <circle cx="1156" cy="352" r="9" />
+                </g>
+                <!-- Row 2 (behind) -->
+                <g fill="#040302" opacity="0.7">
+                  <ellipse cx="30" cy="430" rx="18" ry="40" />
+                  <circle cx="30" cy="392" r="14" />
+                  <ellipse cx="80" cy="425" rx="17" ry="38" />
+                  <circle cx="80" cy="389" r="13" />
+                  <ellipse cx="130" cy="432" rx="18" ry="41" />
+                  <circle cx="130" cy="393" r="14" />
+                  <ellipse cx="180" cy="428" rx="16" ry="38" />
+                  <circle cx="180" cy="392" r="12" />
+                  <ellipse cx="780" cy="430" rx="18" ry="40" />
+                  <circle cx="780" cy="392" r="14" />
+                  <ellipse cx="830" cy="425" rx="17" ry="38" />
+                  <circle cx="830" cy="389" r="13" />
+                  <ellipse cx="880" cy="432" rx="18" ry="41" />
+                  <circle cx="880" cy="393" r="14" />
+                  <ellipse cx="930" cy="428" rx="16" ry="38" />
+                  <circle cx="930" cy="392" r="12" />
+                  <ellipse cx="980" cy="435" rx="18" ry="40" />
+                  <circle cx="980" cy="397" r="14" />
+                  <ellipse cx="1030" cy="430" rx="17" ry="38" />
+                  <circle cx="1030" cy="394" r="13" />
+                  <ellipse cx="1080" cy="433" rx="18" ry="41" />
+                  <circle cx="1080" cy="394" r="14" />
+                  <ellipse cx="1130" cy="429" rx="16" ry="38" />
+                  <circle cx="1130" cy="393" r="12" />
+                </g>
+              </g>
+              <!-- banners on building -->
+              <g>
+                <rect
+                  x="480"
+                  y="170"
+                  width="80"
+                  height="25"
+                  fill="#c8a97e"
+                  opacity="0.25"
+                />
+                <text
+                  x="520"
+                  y="187"
+                  fill="#050403"
+                  font-size="9"
+                  font-family="serif"
+                  text-anchor="middle"
+                >
+                  REFORMASI TOTAL
+                </text>
+                <rect
+                  x="640"
+                  y="175"
+                  width="70"
+                  height="22"
+                  fill="#8b1a1a"
+                  opacity="0.3"
+                />
+                <text
+                  x="675"
+                  y="190"
+                  fill="#f2e8d5"
+                  font-size="8"
+                  font-family="serif"
+                  text-anchor="middle"
+                >
+                  TURUNKAN!
+                </text>
+              </g>
+              <!-- smoke -->
+              <ellipse
+                cx="200"
+                cy="250"
+                rx="100"
+                ry="60"
+                fill="#060504"
+                opacity="0.5"
+              />
+              <ellipse
+                cx="150"
+                cy="200"
+                rx="80"
+                ry="50"
+                fill="#080604"
+                opacity="0.4"
+              />
+              <ellipse
+                cx="1000"
+                cy="240"
+                rx="90"
+                ry="55"
+                fill="#060504"
+                opacity="0.4"
+              />
+              <defs>
+                <linearGradient id="heroSky" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#060504" />
+                  <stop offset="100%" stop-color="#0a0805" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="demo-overlay"></div>
+          <div class="demo-title-big reveal">
+            <span>Suara</span>
+            <span>Rakyat</span>
+            <em>Gerakan Mahasiswa 1998</em>
+          </div>
+        </div>
+        <!-- Scattered newspaper headlines -->
+        <div class="headlines-scatter">
+          <div
+            class="headline-card torn"
+            style="left: 3%; top: 2%; transform: rotate(-3deg)"
+          >
+            <div class="hc-date">12 MEI 1998</div>
+            <div class="hc-title">
+              Empat Mahasiswa Trisakti Gugur Ditembak Aparat
+            </div>
+            <div class="hc-body">
+              Elang, Hendriawan, Hafidin, Hery — empat nama yang mengguncang
+              Indonesia. Bentrokan di Jakarta tersebut memicu kemarahan publik
+              dan gelombang aksi yang lebih besar.
+            </div>
+          </div>
+          <div
+            class="headline-card"
+            style="left: 28%; top: 5%; transform: rotate(2deg)"
+          >
+            <div class="hc-date">13 MEI 1998</div>
+            <div class="hc-title">
+              Kerusuhan Meletus di Jakarta, Ratusan Bangunan Dibakar
+            </div>
+            <div class="hc-body">
+              Api melalap pusat perbelanjaan. Penjarahan terjadi di berbagai
+              penjuru kota. Situasi nasional semakin tidak terkendali di tengah
+              krisis ekonomi dan politik.
+            </div>
+          </div>
+          <div
+            class="headline-card torn"
+            style="right: 2%; top: 0%; transform: rotate(-1.5deg)"
+          >
+            <div class="hc-date">18 MEI 1998</div>
+            <div class="hc-title">Ribuan Mahasiswa Duduki Gedung DPR/MPR</div>
+          </div>
+          <div
+            class="headline-card"
+            style="left: 5%; top: 48%; transform: rotate(4deg)"
+          >
+            <div class="hc-date">19 MEI 1998</div>
+            <div class="hc-title">Harmoko: DPR Minta Soeharto Mundur</div>
+            <div class="hc-body">
+              Ketua DPR, yang dipilih Golkar, berbalik meminta presiden turun
+              tahta.
+            </div>
+          </div>
+          <div
+            class="headline-card torn"
+            style="left: 35%; top: 45%; transform: rotate(-2deg)"
+          >
+            <div class="hc-date">20 MEI 1998</div>
+            <div class="hc-title">
+              Wiranto Pastikan TNI Tidak Tembak Mahasiswa
+            </div>
+          </div>
+          <div
+            class="headline-card"
+            style="right: 3%; top: 45%; transform: rotate(1.5deg)"
+          >
+            <div class="hc-date">21 MEI 1998</div>
+            <div class="hc-title">
+              "Saya Memutuskan untuk Berhenti dari Jabatan Presiden"
+            </div>
+            <div class="hc-body">
+              Pukul 09.00 WIB — Soeharto resmi mundur. Sejarah berubah.
+            </div>
+          </div>
+        </div>
+        <div class="text-block reveal">
+          <div class="pull-quote">
+            Ini bukan sekadar demo. Ini adalah suara sebuah generasi yang tidak
+            mau mewarisi kebungkaman.
+          </div>
+          <p>
+            Dari Universitas Indonesia, Universitas Trisakti, Universitas Gadjah
+            Mada, hingga Universitas Airlangga, mahasiswa mulai bergerak. Mereka
+            menyuarakan tuntutan yang selama puluhan tahun sulit disampaikan
+            secara terbuka: Reformasi. Pemilu yang jujur. Penghapusan dwifungsi
+            ABRI. Pemberantasan KKN. Hingga tuntutan agar Suharto mengundurkan
+            diri.
+          </p>
+        </div>
+      </section>
+      <!-- ======= SECTION 4: PERALIHAN KEKUASAAN (CINEMATIC SCENE) ======= -->
+      <section id="peralihan">
+        <div class="peralihan-intro">
+          <div class="peralihan-eyebrow reveal">
+            Momen Bersejarah — 21 Mei 1998
+          </div>
+          <h2 class="peralihan-heading reveal">
+            Pagi yang<br />Mengubah Indonesia
+          </h2>
+          <p
+            class="reveal"
+            style="
+              color: rgba(242, 232, 213, 0.6);
+              font-size: 1rem;
+              max-width: 500px;
+              margin: 0 auto;
+              line-height: 1.8;
+              text-align: center;
+            "
+          >
+            Pagi hari itu, di Istana Merdeka Jakarta, Soeharto berdiri di podium
+            untuk terakhir kalinya sebagai presiden.
+          </p>
+        </div>
+        <!-- THE CINEMATIC SCENE -->
+        <div class="cinematic-scene">
+          <!-- Complex background scene -->
+          <div class="scene-bg" style="width: 110%; height: 120%">
+            <svg
+              viewBox="0 0 1200 800"
+              xmlns="http://www.w3.org/2000/svg"
+              style="width: 100%; height: 100%; display: block"
+            >
+              <rect width="1200" height="800" fill="#050402" />
+              <!-- Istana Merdeka interior suggestion -->
+              <!-- floor -->
+              <rect y="550" width="1200" height="250" fill="#080604" />
+              <!-- marble floor pattern -->
+              <g stroke="#0d0b07" stroke-width="0.5" opacity="0.4">
+                <line x1="0" y1="600" x2="1200" y2="600" />
+                <line x1="0" y1="640" x2="1200" y2="640" />
+                <line x1="0" y1="680" x2="1200" y2="680" />
+                <line x1="0" y1="720" x2="1200" y2="720" />
+                <line x1="200" y1="550" x2="200" y2="800" />
+                <line x1="400" y1="550" x2="400" y2="800" />
+                <line x1="600" y1="550" x2="600" y2="800" />
+                <line x1="800" y1="550" x2="800" y2="800" />
+                <line x1="1000" y1="550" x2="1000" y2="800" />
+              </g>
+              <!-- ceiling/arch -->
+              <path
+                d="M0 0 Q600 80 1200 0 L1200 200 Q600 280 0 200 Z"
+                fill="#060504"
+              />
+              <!-- columns -->
+              <g fill="#0a0805">
+                <rect x="50" y="200" width="40" height="360" />
+                <rect x="150" y="220" width="35" height="340" />
+                <rect x="1015" y="220" width="35" height="340" />
+                <rect x="1110" y="200" width="40" height="360" />
+              </g>
+              <!-- column tops -->
+              <g fill="#0d0b07">
+                <rect x="42" y="195" width="56" height="15" />
+                <rect x="142" y="215" width="51" height="12" />
+                <rect x="1007" y="215" width="51" height="12" />
+                <rect x="1102" y="195" width="56" height="15" />
+              </g>
+              <!-- Indonesian flag suggestion on wall -->
+              <rect
+                x="530"
+                y="100"
+                width="140"
+                height="90"
+                fill="#0a0805"
+                stroke="#1a1208"
+                stroke-width="1"
+              />
+              <rect
+                x="530"
+                y="100"
+                width="140"
+                height="45"
+                fill="#8b1a1a"
+                opacity="0.4"
+              />
+              <rect
+                x="530"
+                y="145"
+                width="140"
+                height="45"
+                fill="#f2e8d5"
+                opacity="0.1"
+              />
+              <!-- podium -->
+              <rect x="480" y="460" width="240" height="100" fill="#0f0d08" />
+              <rect x="470" y="450" width="260" height="20" fill="#1a1508" />
+              <!-- microphones on podium -->
+              <g fill="#080605">
+                <circle cx="555" cy="435" r="8" />
+                <rect x="553" y="443" width="4" height="25" />
+                <circle cx="600" cy="430" r="8" />
+                <rect x="598" y="438" width="4" height="30" />
+                <circle cx="645" cy="435" r="8" />
+                <rect x="643" y="443" width="4" height="25" />
+              </g>
+              <!-- ambient light from windows -->
+              <defs>
+                <radialGradient id="lightL" cx="20%" cy="40%">
+                  <stop offset="0%" stop-color="#c8a97e" stop-opacity="0.06" />
+                  <stop offset="100%" stop-color="#050402" stop-opacity="0" />
+                </radialGradient>
+                <radialGradient id="lightR" cx="80%" cy="40%">
+                  <stop offset="0%" stop-color="#c8a97e" stop-opacity="0.05" />
+                  <stop offset="100%" stop-color="#050402" stop-opacity="0" />
+                </radialGradient>
+                <radialGradient id="lightC" cx="50%" cy="20%">
+                  <stop offset="0%" stop-color="#c8a97e" stop-opacity="0.04" />
+                  <stop offset="100%" stop-color="#050402" stop-opacity="0" />
+                </radialGradient>
+              </defs>
+              <rect width="1200" height="800" fill="url(#lightL)" />
+              <rect width="1200" height="800" fill="url(#lightR)" />
+              <rect width="1200" height="800" fill="url(#lightC)" />
+              <!-- audience silhouettes -->
+              <g fill="#030202" opacity="0.7">
+                <ellipse cx="250" cy="540" rx="16" ry="38" />
+                <circle cx="250" cy="504" r="13" />
+                <ellipse cx="290" cy="537" rx="15" ry="36" />
+                <circle cx="290" cy="503" r="12" />
+                <ellipse cx="330" cy="541" rx="16" ry="38" />
+                <circle cx="330" cy="505" r="13" />
+                <ellipse cx="870" cy="540" rx="16" ry="38" />
+                <circle cx="870" cy="504" r="13" />
+                <ellipse cx="910" cy="537" rx="15" ry="36" />
+                <circle cx="910" cy="503" r="12" />
+                <ellipse cx="950" cy="541" rx="16" ry="38" />
+                <circle cx="950" cy="505" r="13" />
+              </g>
+            </svg>
+          </div>
+          <div class="scene-overlay"></div>
+          <!-- SOEHARTO FIGURE (LEFT) -->
+          <div class="figure-soeharto">
+            <svg
+              viewBox="0 0 200 420"
+              xmlns="http://www.w3.org/2000/svg"
+              width="200"
+              height="420"
+            >
+              <!-- Shadow -->
+              <ellipse
+                cx="100"
+                cy="410"
+                rx="60"
+                ry="8"
+                fill="rgba(0,0,0,0.5)"
+              />
+              <!-- Body -->
+              <rect
+                x="45"
+                y="195"
+                width="110"
+                height="200"
+                fill="#0f0d08"
+                rx="5"
+              />
+              <!-- Jacket -->
+              <path
+                d="M55 195 L100 220 L145 195 L155 205 L100 235 L45 205 Z"
+                fill="#1a1508"
+              />
+              <!-- Military jacket color -->
+              <rect
+                x="48"
+                y="195"
+                width="104"
+                height="200"
+                fill="#0d0b06"
+                rx="3"
+              />
+              <!-- Medals/decorations -->
+              <g fill="#c8a97e" opacity="0.35">
+                <rect x="60" y="215" width="12" height="8" rx="1" />
+                <rect x="76" y="215" width="12" height="8" rx="1" />
+                <rect x="92" y="215" width="12" height="8" rx="1" />
+                <rect x="108" y="215" width="12" height="8" rx="1" />
+                <rect x="60" y="228" width="12" height="8" rx="1" />
+                <rect x="76" y="228" width="12" height="8" rx="1" />
+              </g>
+              <!-- Collar/tie -->
+              <path
+                d="M85 195 L100 210 L115 195"
+                fill="none"
+                stroke="#1a1508"
+                stroke-width="3"
+              />
+              <!-- Head -->
+              <ellipse cx="100" cy="155" rx="42" ry="50" fill="#1a1508" />
+              <!-- Face shadow shaping -->
+              <ellipse cx="100" cy="160" rx="35" ry="42" fill="#150f07" />
+              <!-- Eyes -->
+              <ellipse cx="87" cy="148" rx="8" ry="7" fill="#0a0805" />
+              <ellipse cx="113" cy="148" rx="8" ry="7" fill="#0a0805" />
+              <!-- Glasses suggestion -->
+              <ellipse
+                cx="87"
+                cy="148"
+                rx="10"
+                ry="8"
+                fill="none"
+                stroke="#c8a97e"
+                stroke-width="0.8"
+                opacity="0.3"
+              />
+              <ellipse
+                cx="113"
+                cy="148"
+                rx="10"
+                ry="8"
+                fill="none"
+                stroke="#c8a97e"
+                stroke-width="0.8"
+                opacity="0.3"
+              />
+              <line
+                x1="97"
+                y1="148"
+                x2="103"
+                y2="148"
+                stroke="#c8a97e"
+                stroke-width="0.8"
+                opacity="0.3"
+              />
+              <!-- Hair (dark, slicked) -->
+              <ellipse cx="100" cy="118" rx="40" ry="20" fill="#080604" />
+              <!-- Peci/cap -->
+              <ellipse cx="100" cy="108" rx="38" ry="10" fill="#0a0805" />
+              <rect
+                x="65"
+                y="100"
+                width="70"
+                height="12"
+                fill="#0d0b06"
+                rx="3"
+              />
+              <!-- Outstretched hand (right arm slightly raised) -->
+              <path
+                d="M148 240 Q175 220 180 200 Q185 195 188 198 Q183 210 182 225 Q178 240 170 250 Q160 258 148 258 Z"
+                fill="#150f07"
+              />
+              <!-- Hand -->
+              <ellipse cx="186" cy="200" rx="10" ry="8" fill="#1a1508" />
+              <!-- Name label floating -->
+              <rect
+                x="10"
+                y="380"
+                width="180"
+                height="28"
+                fill="#f2e8d5"
+                opacity="0.04"
+                rx="1"
+              />
+              <text
+                x="100"
+                y="397"
+                fill="#c8a97e"
+                font-size="9"
+                font-family="serif"
+                text-anchor="middle"
+                opacity="0.5"
+                letter-spacing="2"
+              >
+                SOEHARTO
+              </text>
+              <text
+                x="100"
+                y="406"
+                fill="#c8a97e"
+                font-size="7"
+                font-family="serif"
+                text-anchor="middle"
+                opacity="0.3"
+              >
+                PRESIDEN RI KE-2
+              </text>
+            </svg>
+          </div>
+          <!-- Light beam -->
+          <div class="light-beam"></div>
+          <!-- HABIBIE FIGURE (RIGHT) -->
+          <div class="figure-habibie">
+            <svg
+              viewBox="0 0 200 420"
+              xmlns="http://www.w3.org/2000/svg"
+              width="200"
+              height="420"
+            >
+              <!-- Shadow -->
+              <ellipse
+                cx="100"
+                cy="410"
+                rx="55"
+                ry="8"
+                fill="rgba(0,0,0,0.5)"
+              />
+              <!-- Body - civilian suit -->
+              <rect
+                x="48"
+                y="195"
+                width="104"
+                height="200"
+                fill="#0d0b07"
+                rx="3"
+              />
+              <!-- suit details -->
+              <path
+                d="M60 195 L100 215 L140 195 L150 205 L100 230 L50 205 Z"
+                fill="#1a1508"
+              />
+              <!-- tie -->
+              <path
+                d="M97 195 L103 195 L105 250 L100 255 L95 250 Z"
+                fill="#0a0805"
+              />
+              <!-- Head -->
+              <ellipse cx="100" cy="155" rx="40" ry="48" fill="#1a1508" />
+              <ellipse cx="100" cy="160" rx="33" ry="40" fill="#150f07" />
+              <!-- Eyes -->
+              <ellipse cx="88" cy="150" rx="7" ry="6" fill="#0a0805" />
+              <ellipse cx="112" cy="150" rx="7" ry="6" fill="#0a0805" />
+              <!-- Glasses -->
+              <ellipse
+                cx="88"
+                cy="150"
+                rx="9"
+                ry="7"
+                fill="none"
+                stroke="#c8a97e"
+                stroke-width="0.8"
+                opacity="0.4"
+              />
+              <ellipse
+                cx="112"
+                cy="150"
+                rx="9"
+                ry="7"
+                fill="none"
+                stroke="#c8a97e"
+                stroke-width="0.8"
+                opacity="0.4"
+              />
+              <line
+                x1="97"
+                y1="150"
+                x2="103"
+                y2="150"
+                stroke="#c8a97e"
+                stroke-width="0.8"
+                opacity="0.4"
+              />
+              <!-- Hair -->
+              <ellipse cx="100" cy="118" rx="38" ry="18" fill="#0d0b06" />
+              <!-- Peci -->
+              <ellipse cx="100" cy="109" rx="36" ry="9" fill="#0a0805" />
+              <rect
+                x="67"
+                y="102"
+                width="66"
+                height="11"
+                fill="#0d0b06"
+                rx="3"
+              />
+              <!-- Left arm / hand receiving -->
+              <path
+                d="M52 240 Q25 222 22 202 Q17 196 14 199 Q19 212 20 227 Q24 242 32 252 Q42 260 52 260 Z"
+                fill="#150f07"
+              />
+              <ellipse cx="14" cy="201" rx="10" ry="8" fill="#1a1508" />
+              <!-- Emotional aura -->
+              <ellipse
+                cx="100"
+                cy="250"
+                rx="80"
+                ry="120"
+                fill="#8b1a1a"
+                opacity="0.03"
+              />
+              <!-- Name label -->
+              <rect
+                x="10"
+                y="380"
+                width="180"
+                height="28"
+                fill="#f2e8d5"
+                opacity="0.04"
+                rx="1"
+              />
+              <text
+                x="100"
+                y="397"
+                fill="#c8a97e"
+                font-size="9"
+                font-family="serif"
+                text-anchor="middle"
+                opacity="0.5"
+                letter-spacing="2"
+              >
+                B.J. HABIBIE
+              </text>
+              <text
+                x="100"
+                y="406"
+                fill="#c8a97e"
+                font-size="7"
+                font-family="serif"
+                text-anchor="middle"
+                opacity="0.3"
+              >
+                PRESIDEN RI KE-3
+              </text>
+            </svg>
+          </div>
+          <!-- Floating documents -->
+          <div class="floating-docs">
+            <div
+              class="float-doc"
+              style="top: 20%; left: 15%; --dr: -5deg; --dd: 0s; --do: 0.25"
+            >
+              SURAT PERNYATAAN BERHENTI<br />DARI JABATAN PRESIDEN<br />REPUBLIK
+              INDONESIA...<br />Jakarta, 21 Mei 1998
+            </div>
+            <div
+              class="float-doc"
+              style="top: 15%; right: 12%; --dr: 4deg; --dd: 3s; --do: 0.2"
+            >
+              BERDASARKAN PASAL 8<br />UNDANG-UNDANG DASAR 1945...<br />Wakil
+              Presiden mengambil alih<br />jabatan Presiden RI...
+            </div>
+            <div
+              class="float-doc"
+              style="bottom: 25%; left: 10%; --dr: 2deg; --dd: 6s; --do: 0.15"
+            >
+              KEPUTUSAN PRESIDEN<br />No. 48/TK/1998<br />Tentang
+              pemberhentian<br />dengan hormat...
+            </div>
+            <div
+              class="float-doc"
+              style="bottom: 30%; right: 8%; --dr: -3deg; --dd: 9s; --do: 0.2"
+            >
+              PROTOKOL KENEGARAAN<br />MAHKAMAH AGUNG RI<br />Penyumpahan
+              Presiden...<br />21 Mei 1998 — 09:13 WIB
+            </div>
+          </div>
+          <!-- Dust particles -->
+          <div class="scene-dust" id="scene-dust-container"></div>
+          <!-- Caption -->
+          <div class="scene-caption">
+            <div class="scene-timestamp">
+              21 Mei 1998 — 09:00 WIB — Istana Merdeka, Jakarta
+            </div>
+            <div class="scene-quote">
+              "Saya memutuskan untuk berhenti dari jabatan saya sebagai Presiden
+              Republik Indonesia."
+            </div>
+          </div>
+        </div>
+        <!-- Aftermath -->
+        <div class="aftermath">
+          <div class="aftermath-grid">
+            <div class="aftermath-item reveal-left">
+              <h3>Pidato Pengunduran Diri</h3>
+              <p>
+                Pukul 09:05 WIB, Soeharto membacakan pernyataan pengunduran
+                dirinya. Pidato tersebut berlangsung singkat dan tanpa banyak
+                ekspresi. Setelah memimpin selama 32 tahun, berakhirnya Orde
+                Baru diumumkan hanya dalam hitungan menit.
+              </p>
+            </div>
+            <div class="aftermath-item reveal-right">
+              <h3>Sumpah Jabatan Habibie</h3>
+              <p>
+                B. J. Habibie resmi diambil sumpahnya sebagai Presiden Republik
+                Indonesia ketiga di hadapan Mahkamah Agung. Peristiwa tersebut
+                menandai dimulainya Era Reformasi. Tangis haru dan sorak
+                kemenangan bercampur di luar gedung.
+              </p>
+            </div>
+            <div class="aftermath-item reveal-left">
+              <h3>Reaksi Mahasiswa</h3>
+              <p>
+                Di gedung DPR, kampus, dan jalan-jalan Jakarta, masyarakat
+                menyambut pengunduran diri Soeharto dengan tangis haru, pelukan,
+                dan pekikan “Hidup Reformasi!”. Setelah puluhan tahun, tuntutan
+                perubahan akhirnya tercapai.
+              </p>
+            </div>
+            <div class="aftermath-item reveal-right">
+              <h3>Transisi Bersejarah</h3>
+              <p>
+                Indonesia memasuki babak baru. Habibie mengumumkan pemilu bebas,
+                kebebasan pers, dan agenda reformasi besar-besaran dalam 100
+                hari pertama pemerintahannya.
+              </p>
+            </div>
+            <p
+              class="reveal"
+              style="
+                color: rgba(242, 232, 213, 0.6);
+                font-size: 1rem;
+                max-width: 500px;
+                margin: 0 auto;
+                line-height: 1.8;
+                text-align: center;
+                grid-column: 1 / -1;
+              "
+            >
+              21 Mei 1998 menjadi salah satu titik paling penting dalam sejarah
+              Indonesia modern. Hari itu bukan hanya menandai berakhirnya Orde
+              Baru, tetapi juga lahirnya harapan baru bagi demokrasi Indonesia.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- ======= SECTION 5: WARISAN ======= -->
+      <section id="warisan">
+        <div class="chapter-header reveal">
+          <div class="chapter-num">Bab IV</div>
+          <h2 class="chapter-title">Warisan<br />Reformasi</h2>
+        </div>
+        <div class="legacy-quote reveal">
+          <blockquote>
+            Reformasi bukan sekadar pergantian pemimpin. Ia adalah perubahan
+            cara sebuah bangsa memahami dirinya sendiri.
+            <cite>— Arsip Sejarah Indonesia, 1998</cite>
+          </blockquote>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="tl-content reveal-left">
+              <div class="tl-date">MEI 1998</div>
+              <div class="tl-event">Soeharto Mundur</div>
+              <div class="tl-detail">
+                Setelah 32 tahun, Orde Baru berakhir. Indonesia memasuki era
+                baru demokrasi.
+              </div>
+            </div>
+            <div class="tl-dot"></div>
+            <div class="tl-empty"></div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-empty"></div>
+            <div class="tl-dot"></div>
+            <div class="tl-content reveal-right">
+              <div class="tl-date">JUNI 1999</div>
+              <div class="tl-event">Pemilu Bebas Pertama</div>
+              <div class="tl-detail">
+                Pemilu multipartai pertama sejak 1955. 48 partai berkompetisi.
+                Demokrasi mulai bersemi.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-content reveal-left">
+              <div class="tl-date">AGUSTUS 1999</div>
+              <div class="tl-event">Timor Timur Referendum</div>
+              <div class="tl-detail">
+                Di bawah Habibie, Timor Timur diberikan hak referendum. 78,5%
+                memilih merdeka.
+              </div>
+            </div>
+            <div class="tl-dot"></div>
+            <div class="tl-empty"></div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-empty"></div>
+            <div class="tl-dot"></div>
+            <div class="tl-content reveal-right">
+              <div class="tl-date">2004</div>
+              <div class="tl-event">Pemilu Presiden Langsung</div>
+              <div class="tl-detail">
+                Rakyat Indonesia memilih presidennya secara langsung untuk
+                pertama kalinya dalam sejarah.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-content reveal-left">
+              <div class="tl-date">HINGGA KINI</div>
+              <div class="tl-event">Demokrasi Terus Berjalan</div>
+              <div class="tl-detail">
+                Reformasi membuka jalan bagi kebebasan pers, otonomi daerah, dan
+                sistem multipartai yang hidup.
+              </div>
+            </div>
+            <div
+              class="tl-dot"
+              style="
+                background: #8b1a1a;
+                box-shadow: 0 0 10px rgba(139, 26, 26, 0.4);
+              "
+            ></div>
+            <div class="tl-empty"></div>
+          </div>
+        </div>
+        <div class="text-block reveal" style="margin-top: 4rem">
+          <div class="pull-quote">
+            Para mahasiswa 1998 tidak hanya menurunkan seorang presiden. Mereka
+            mengubah sejarah Indonesia untuk selamanya.
+          </div>
+          <p>
+            Reformasi meninggalkan warisan yang kompleks dan kontradiktif.
+            Demokrasi tumbuh, namun korupsi belum sepenuhnya hilang. Kebebasan
+            hadir, namun ketidaksetaraan masih menganga. Seperti semua revolusi
+            besar, 1998 adalah awal, bukan akhir — sebuah janji yang masih terus
+            diperjuangkan.
+          </p>
+        </div>
+      </section>
+      <!-- FOOTER -->
+      <div id="footer">
+        <div class="footer-title">
+          Proyek Website Interaktif — Reformasi Indonesia 1998
+        </div>
+        <div class="footer-note">
+          SMK Negeri 7 Semarang • Tahun Ajaran 2025/2026<br />
+          © 2026 Reformasi 1998 Interactive Archive
+        </div>
+      </div>
+      <!-- END HOME PAGE -->
+    </div>
+    <!-- ======= PAGE: MATERI ======= -->
+    <div id="page-materi" class="page">
+      <div class="materi-hero">
+        <div class="materi-hero-bg" style="width: 110%; height: 120%">
+          <svg
+            viewBox="0 0 1400 600"
+            xmlns="http://www.w3.org/2000/svg"
+            style="width: 100%; height: 100%; display: block"
+          >
+            <rect width="1400" height="600" fill="#060504" />
+            <!-- layered documentary feel -->
+            <rect y="350" width="1400" height="250" fill="#0a0805" />
+            <!-- film strip top -->
+            <rect width="1400" height="40" fill="#080604" />
+            <g fill="#0a0805">
+              <rect x="20" y="8" width="30" height="24" rx="2" />
+              <rect x="70" y="8" width="30" height="24" rx="2" />
+              <rect x="120" y="8" width="30" height="24" rx="2" />
+              <rect x="170" y="8" width="30" height="24" rx="2" />
+              <rect x="220" y="8" width="30" height="24" rx="2" />
+              <rect x="270" y="8" width="30" height="24" rx="2" />
+              <rect x="320" y="8" width="30" height="24" rx="2" />
+              <rect x="370" y="8" width="30" height="24" rx="2" />
+              <rect x="420" y="8" width="30" height="24" rx="2" />
+              <rect x="470" y="8" width="30" height="24" rx="2" />
+              <rect x="520" y="8" width="30" height="24" rx="2" />
+              <rect x="570" y="8" width="30" height="24" rx="2" />
+              <rect x="620" y="8" width="30" height="24" rx="2" />
+              <rect x="670" y="8" width="30" height="24" rx="2" />
+              <rect x="720" y="8" width="30" height="24" rx="2" />
+              <rect x="770" y="8" width="30" height="24" rx="2" />
+              <rect x="820" y="8" width="30" height="24" rx="2" />
+              <rect x="870" y="8" width="30" height="24" rx="2" />
+              <rect x="920" y="8" width="30" height="24" rx="2" />
+              <rect x="970" y="8" width="30" height="24" rx="2" />
+              <rect x="1020" y="8" width="30" height="24" rx="2" />
+              <rect x="1070" y="8" width="30" height="24" rx="2" />
+              <rect x="1120" y="8" width="30" height="24" rx="2" />
+              <rect x="1170" y="8" width="30" height="24" rx="2" />
+              <rect x="1220" y="8" width="30" height="24" rx="2" />
+              <rect x="1270" y="8" width="30" height="24" rx="2" />
+              <rect x="1320" y="8" width="30" height="24" rx="2" />
+              <rect x="1370" y="8" width="30" height="24" rx="2" />
+            </g>
+            <!-- Main background scene: parliament + students -->
+            <rect x="200" y="50" width="400" height="320" fill="#0d0b06" />
+            <rect x="700" y="80" width="300" height="280" fill="#0a0805" />
+            <rect x="1050" y="60" width="300" height="310" fill="#0d0b06" />
+            <!-- text overlays -->
+            <text
+              x="400"
+              y="390"
+              fill="#c8a97e"
+              font-size="11"
+              font-family="serif"
+              text-anchor="middle"
+              opacity="0.3"
+              letter-spacing="3"
+            >
+              KRISIS MONETER 1997
+            </text>
+            <text
+              x="850"
+              y="380"
+              fill="#c8a97e"
+              font-size="11"
+              font-family="serif"
+              text-anchor="middle"
+              opacity="0.25"
+              letter-spacing="3"
+            >
+              DEMONSTRASI MAHASISWA
+            </text>
+            <text
+              x="1200"
+              y="390"
+              fill="#c8a97e"
+              font-size="11"
+              font-family="serif"
+              text-anchor="middle"
+              opacity="0.3"
+              letter-spacing="3"
+            >
+              PERALIHAN KEKUASAAN
+            </text>
+            <!-- gradient overlay -->
+            <rect width="1400" height="600" fill="url(#materiBg)" />
+            <defs>
+              <linearGradient id="materiBg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#060504" stop-opacity="0.3" />
+                <stop offset="70%" stop-color="#060504" stop-opacity="0" />
+                <stop offset="100%" stop-color="#060504" stop-opacity="0.9" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="materi-hero-overlay"></div>
+        <div class="materi-hero-text">
+          <h1>Materi<br />Reformasi</h1>
+          <p>Arsip Dokumentasi — Indonesia 1998</p>
+        </div>
+      </div>
+      <!-- Newsbar -->
+      <div class="newsbar">
+        <span class="newsbar-inner"
+          >◆ KLIK SETIAP TOPIK UNTUK MEMBUKA ARSIP LENGKAP ◆ LIMA BAB UTAMA
+          SEJARAH REFORMASI INDONESIA ◆ DOKUMEN · ANALISIS · KONTEKS HISTORIS ◆
+          KLIK SETIAP TOPIK UNTUK MEMBUKA ARSIP LENGKAP ◆ LIMA BAB UTAMA SEJARAH
+          REFORMASI INDONESIA ◆ DOKUMEN · ANALISIS · KONTEKS HISTORIS ◆</span
+        >
+      </div>
+      <!-- Topic Cards Grid -->
+      <div class="materi-grid">
+        <!-- Card 1: Krisis Moneter -->
+        <div class="materi-card" onclick="toggleDetail('d1')">
+          <div class="mc-bg">
+            <svg
+              viewBox="0 0 600 400"
+              xmlns="http://www.w3.org/2000/svg"
+              style="width: 100%; height: 100%; display: block"
+            >
+              <rect width="600" height="400" fill="#0d0b05" />
+              <!-- falling chart -->
+              <polyline
+                points="0,80 60,90 120,110 200,160 280,210 360,260 450,300 550,330 600,345"
+                fill="none"
+                stroke="#c8a97e"
+                stroke-width="1.5"
+                opacity="0.3"
+              />
+              <polyline
+                points="0,80 60,90 120,110 200,160 280,210 360,260 450,300 550,330 600,345"
+                fill="url(#chartFill)"
+                opacity="0.15"
+              />
+              <g stroke="#1a1508" stroke-width="0.5" opacity="0.3">
+                <line x1="0" y1="100" x2="600" y2="100" />
+                <line x1="0" y1="180" x2="600" y2="180" />
+                <line x1="0" y1="260" x2="600" y2="260" />
+                <line x1="0" y1="340" x2="600" y2="340" />
+              </g>
+              <text
+                x="300"
+                y="200"
+                fill="#c8a97e"
+                font-size="80"
+                font-family="serif"
+                text-anchor="middle"
+                opacity="0.06"
+                font-weight="bold"
+              >
+                Rp
+              </text>
+              <text
+                x="300"
+                y="350"
+                fill="#c8a97e"
+                font-size="11"
+                font-family="serif"
+                text-anchor="middle"
+                opacity="0.25"
+                letter-spacing="3"
+              >
+                USD/IDR 1997–1998
+              </text>
+              <rect width="600" height="400" fill="url(#cardDark)" />
+              <defs>
+                <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#c8a97e" />
+                  <stop offset="100%" stop-color="#c8a97e" stop-opacity="0" />
+                </linearGradient>
+                <linearGradient id="cardDark" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="30%" stop-color="#0d0b05" stop-opacity="0" />
+                  <stop offset="100%" stop-color="#0d0b05" stop-opacity="0.9" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="mc-overlay"></div>
+          <div class="mc-num">01</div>
+          <div class="mc-content">
+            <span class="mc-tag">Ekonomi</span>
+            <div class="mc-title">Krisis Moneter 1997–1998</div>
+            <div class="mc-info">
+              Bagaimana badai keuangan Asia menghancurkan Rupiah dan memicu
+              ketidakpuasan rakyat Indonesia yang akhirnya menjadi bahan bakar
+              Reformasi.
+            </div>
+          </div>
+        </div>
+        <!-- Card 2: Orde Baru -->
+        <div class="materi-card" onclick="toggleDetail('d2')">
+          <div class="mc-bg">
+            <svg
+              viewBox="0 0 600 400"
+              xmlns="http://www.w3.org/2000/svg"
+              style="width: 100%; height: 100%; display: block"
+            >
+              <rect width="600" height="400" fill="#0a0805" />
+              <!-- portrait + military -->
+              <rect
+                x="180"
+                y="40"
+                width="240"
+                height="260"
+                fill="#120e08"
+                stroke="#c8a97e"
+                stroke-width="0.5"
+                opacity="0.25"
+              />
+              <ellipse cx="300" cy="140" rx="55" ry="65" fill="#1a1508" />
+              <rect x="230" y="195" width="140" height="100" fill="#150f08" />
+              <g fill="#c8a97e" opacity="0.2">
+                <rect x="245" y="215" width="15" height="10" rx="1" />
+                <rect x="265" y="215" width="15" height="10" rx="1" />
+                <rect x="285" y="215" width="15" height="10" rx="1" />
+                <rect x="305" y="215" width="15" height="10" rx="1" />
+                <rect x="325" y="215" width="15" height="10" rx="1" />
+              </g>
+              <text
+                x="300"
+                y="340"
+                fill="#c8a97e"
+                font-size="60"
+                font-family="serif"
+                text-anchor="middle"
+                opacity="0.06"
+                font-weight="bold"
+              >
+                32
+              </text>
+              <text
+                x="300"
+                y="365"
+                fill="#c8a97e"
+                font-size="10"
+                font-family="serif"
+                text-anchor="middle"
+                opacity="0.3"
+                letter-spacing="3"
+              >
+                TAHUN BERKUASA
+              </text>
+              <rect width="600" height="400" fill="url(#cardDark2)" />
+              <defs>
+                <linearGradient id="cardDark2" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="30%" stop-color="#0a0805" stop-opacity="0" />
+                  <stop offset="100%" stop-color="#0a0805" stop-opacity="0.9" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="mc-overlay"></div>
+          <div class="mc-num">02</div>
+          <div class="mc-content">
+            <span class="mc-tag">Politik</span>
+            <div class="mc-title">Orde Baru & Soeharto</div>
+            <div class="mc-info">
+              Tiga dekade kekuasaan yang mengubah Indonesia: dari pembangunan
+              ekonomi hingga korupsi sistemik yang akhirnya menghancurkan
+              legitimasinya sendiri.
+            </div>
+          </div>
+        </div>
+        <!-- Card 3: Gerakan Mahasiswa -->
+        <div class="materi-card" onclick="toggleDetail('d3')">
+          <div class="mc-bg">
+            <svg
+              viewBox="0 0 600 400"
+              xmlns="http://www.w3.org/2000/svg"
+              style="width: 100%; height: 100%; display: block"
+            >
+              <rect width="600" height="400" fill="#080604" />
+              <!-- crowd mass -->
+              <rect y="220" width="600" height="180" fill="#0a0805" />
+              <g fill="#050402" opacity="0.9">
+                <ellipse cx="30" cy="270" rx="14" ry="32" />
+                <circle cx="30" cy="240" r="11" />
+                <ellipse cx="65" cy="265" rx="13" ry="30" />
+                <circle cx="65" cy="237" r="10" />
+                <ellipse cx="100" cy="272" rx="14" ry="33" />
+                <circle cx="100" cy="241" r="11" />
+                <ellipse cx="135" cy="268" rx="12" ry="29" />
+                <circle cx="135" cy="241" r="9" />
+                <ellipse cx="170" cy="275" rx="14" ry="32" />
+                <circle cx="170" cy="245" r="11" />
+                <ellipse cx="205" cy="269" rx="13" ry="30" />
+                <circle cx="205" cy="241" r="10" />
+                <ellipse cx="240" cy="272" rx="14" ry="32" />
+                <circle cx="240" cy="242" r="11" />
+                <ellipse cx="275" cy="267" rx="12" ry="29" />
+                <circle cx="275" cy="240" r="9" />
+                <ellipse cx="310" cy="274" rx="14" ry="33" />
+                <circle cx="310" cy="243" r="11" />
+                <ellipse cx="345" cy="270" rx="13" ry="31" />
+                <circle cx="345" cy="241" r="10" />
+                <ellipse cx="380" cy="272" rx="14" ry="32" />
+                <circle cx="380" cy="242" r="11" />
+                <ellipse cx="415" cy="267" rx="12" ry="29" />
+                <circle cx="415" cy="240" r="9" />
+                <ellipse cx="450" cy="275" rx="14" ry="33" />
+                <circle cx="450" cy="244" r="11" />
+                <ellipse cx="485" cy="269" rx="13" ry="30" />
+                <circle cx="485" cy="241" r="10" />
+                <ellipse cx="520" cy="273" rx="14" ry="32" />
+                <circle cx="520" cy="243" r="11" />
+                <ellipse cx="555" cy="268" rx="12" ry="29" />
+                <circle cx="555" cy="241" r="9" />
+                <ellipse cx="585" cy="271" rx="13" ry="31" />
+                <circle cx="585" cy="242" r="10" />
+              </g>
+              <!-- banners raised -->
+              <g>
+                <rect
+                  x="90"
+                  y="170"
+                  width="55"
+                  height="28"
+                  fill="#8b1a1a"
+                  opacity="0.3"
+                />
+                <rect x="89" y="168" width="2" height="55" />
+                <text
+                  x="117"
+                  y="188"
+                  fill="#f2e8d5"
+                  font-size="7"
+                  text-anchor="middle"
+                  opacity="0.5"
+                >
+                  REFORMASI
+                </text>
+                <rect
+                  x="280"
+                  y="160"
+                  width="75"
+                  height="28"
+                  fill="#c8a97e"
+                  opacity="0.2"
+                />
+                <rect x="279" y="158" width="2" height="65" />
+                <text
+                  x="317"
+                  y="178"
+                  fill="#f2e8d5"
+                  font-size="7"
+                  text-anchor="middle"
+                  opacity="0.4"
+                >
+                  TURUNKAN SOEHARTO
+                </text>
+                <rect
+                  x="460"
+                  y="168"
+                  width="60"
+                  height="28"
+                  fill="#8b1a1a"
+                  opacity="0.25"
+                />
+                <rect x="459" y="166" width="2" height="58" />
+                <text
+                  x="489"
+                  y="185"
+                  fill="#f2e8d5"
+                  font-size="6"
+                  text-anchor="middle"
+                  opacity="0.4"
+                >
+                  MAHASISWA BERSATU
+                </text>
+              </g>
+              <!-- smoke -->
+              <ellipse
+                cx="150"
+                cy="120"
+                rx="80"
+                ry="40"
+                fill="#060504"
+                opacity="0.5"
+              />
+              <ellipse
+                cx="400"
+                cy="100"
+                rx="100"
+                ry="50"
+                fill="#080604"
+                opacity="0.4"
+              />
+              <rect width="600" height="400" fill="url(#cardDark3)" />
+              <defs>
+                <linearGradient id="cardDark3" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="20%" stop-color="#080604" stop-opacity="0" />
+                  <stop offset="100%" stop-color="#080604" stop-opacity="0.9" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="mc-overlay"></div>
+          <div class="mc-num">03</div>
+          <div class="mc-content">
+            <span class="mc-tag">Sosial</span>
+            <div class="mc-title">Gerakan Mahasiswa 1998</div>
+            <div class="mc-info">
+              Dari kampus ke jalanan, dari Trisakti ke Semanggi — kisah generasi
+              muda yang mengorbankan nyawa demi perubahan bangsa.
+            </div>
+          </div>
+        </div>
+        <!-- Card 4: Peralihan -->
+        <div class="materi-card" onclick="toggleDetail('d4')">
+          <div class="mc-bg">
+            <svg
+              viewBox="0 0 600 400"
+              xmlns="http://www.w3.org/2000/svg"
+              style="width: 100%; height: 100%; display: block"
+            >
+              <rect width="600" height="400" fill="#050402" />
+              <!-- two figures transferring power -->
+              <!-- left figure -->
+              <ellipse cx="160" cy="200" rx="30" ry="75" fill="#1a1508" />
+              <ellipse cx="160" cy="140" rx="28" ry="35" fill="#150f07" />
+              <ellipse cx="150" cy="135" rx="6" ry="5" fill="#0a0805" />
+              <ellipse cx="170" cy="135" rx="6" ry="5" fill="#0a0805" />
+              <!-- right figure -->
+              <ellipse cx="440" cy="200" rx="28" ry="72" fill="#1a1508" />
+              <ellipse cx="440" cy="142" rx="26" ry="33" fill="#150f07" />
+              <ellipse cx="430" cy="138" rx="6" ry="5" fill="#0a0805" />
+              <ellipse cx="450" cy="138" rx="6" ry="5" fill="#0a0805" />
+              <!-- document being handed -->
+              <rect
+                x="230"
+                y="170"
+                width="140"
+                height="100"
+                fill="#f2e8d5"
+                opacity="0.06"
+                rx="1"
+              />
+              <line
+                x1="250"
+                y1="190"
+                x2="350"
+                y2="190"
+                stroke="#c8a97e"
+                stroke-width="0.5"
+                opacity="0.25"
+              />
+              <line
+                x1="250"
+                y1="202"
+                x2="340"
+                y2="202"
+                stroke="#c8a97e"
+                stroke-width="0.5"
+                opacity="0.2"
+              />
+              <line
+                x1="250"
+                y1="214"
+                x2="345"
+                y2="214"
+                stroke="#c8a97e"
+                stroke-width="0.5"
+                opacity="0.2"
+              />
+              <text
+                x="300"
+                y="252"
+                fill="#c8a97e"
+                font-size="7"
+                text-anchor="middle"
+                opacity="0.4"
+                font-family="serif"
+              >
+                SURAT PENYERAHAN JABATAN
+              </text>
+              <!-- light beam between -->
+              <line
+                x1="195"
+                y1="200"
+                x2="405"
+                y2="200"
+                stroke="#c8a97e"
+                stroke-width="0.5"
+                stroke-dasharray="4,4"
+                opacity="0.2"
+              />
+              <!-- date stamp -->
+              <text
+                x="300"
+                y="360"
+                fill="#c8a97e"
+                font-size="10"
+                text-anchor="middle"
+                opacity="0.3"
+                letter-spacing="3"
+              >
+                21 MEI 1998 — 09:00 WIB
+              </text>
+              <rect width="600" height="400" fill="url(#cardDark4)" />
+              <defs>
+                <linearGradient id="cardDark4" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="20%" stop-color="#050402" stop-opacity="0" />
+                  <stop offset="100%" stop-color="#050402" stop-opacity="0.9" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="mc-overlay"></div>
+          <div class="mc-num">04</div>
+          <div class="mc-content">
+            <span class="mc-tag">Sejarah</span>
+            <div class="mc-title">Peralihan Kekuasaan 21 Mei</div>
+            <div class="mc-info">
+              Detik-detik bersejarah saat Soeharto menyerahkan jabatan kepada
+              B.J. Habibie, mengakhiri Orde Baru dan membuka era Reformasi
+              Indonesia.
+            </div>
+          </div>
+        </div>
+        <!-- Card 5: Warisan Reformasi -->
+        <div class="materi-card" onclick="toggleDetail('d5')">
+          <div class="mc-bg">
+            <svg
+              viewBox="0 0 600 400"
+              xmlns="http://www.w3.org/2000/svg"
+              style="width: 100%; height: 100%; display: block"
+            >
+              <rect width="600" height="400" fill="#0d0b06" />
+              <!-- constitution / document -->
+              <rect
+                x="150"
+                y="50"
+                width="300"
+                height="280"
+                fill="#f2e8d5"
+                opacity="0.05"
+                rx="3"
+              />
+              <rect
+                x="165"
+                y="70"
+                width="270"
+                height="6"
+                fill="#c8a97e"
+                opacity="0.15"
+              />
+              <g fill="#c8a97e" opacity="0.1">
+                <rect x="165" y="90" width="240" height="3" />
+                <rect x="165" y="100" width="220" height="3" />
+                <rect x="165" y="110" width="250" height="3" />
+                <rect x="165" y="120" width="200" height="3" />
+                <rect x="165" y="140" width="240" height="3" />
+                <rect x="165" y="150" width="210" height="3" />
+                <rect x="165" y="160" width="230" height="3" />
+                <rect x="165" y="180" width="245" height="3" />
+                <rect x="165" y="190" width="180" height="3" />
+                <rect x="165" y="200" width="235" height="3" />
+                <rect x="165" y="220" width="250" height="3" />
+                <rect x="165" y="230" width="195" height="3" />
+                <rect x="165" y="240" width="225" height="3" />
+                <rect x="165" y="260" width="240" height="3" />
+                <rect x="165" y="270" width="205" height="3" />
+                <rect x="165" y="280" width="230" height="3" />
+              </g>
+              <!-- star/seal -->
+              <circle
+                cx="300"
+                cy="305"
+                r="22"
+                fill="none"
+                stroke="#c8a97e"
+                stroke-width="0.5"
+                opacity="0.3"
+              />
+              <text
+                x="300"
+                y="310"
+                fill="#c8a97e"
+                font-size="8"
+                text-anchor="middle"
+                opacity="0.4"
+                letter-spacing="1"
+              >
+                REFORMASI
+              </text>
+              <!-- year markers -->
+              <text
+                x="300"
+                y="365"
+                fill="#c8a97e"
+                font-size="10"
+                text-anchor="middle"
+                opacity="0.25"
+                letter-spacing="3"
+              >
+                1998 — DEMOKRASI
+              </text>
+              <rect width="600" height="400" fill="url(#cardDark5)" />
+              <defs>
+                <linearGradient id="cardDark5" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="30%" stop-color="#0d0b06" stop-opacity="0" />
+                  <stop offset="100%" stop-color="#0d0b06" stop-opacity="0.9" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="mc-overlay"></div>
+          <div class="mc-num">05</div>
+          <div class="mc-content">
+            <span class="mc-tag">Demokrasi</span>
+            <div class="mc-title">Warisan & Dampak Reformasi</div>
+            <div class="mc-info">
+              Bagaimana Reformasi 1998 mengubah tatanan politik, hukum, dan
+              sosial Indonesia — dari otonomi daerah hingga kebebasan pers yang
+              kita nikmati hingga hari ini.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Detail Panels (toggled) -->
+      <div id="d1" class="materi-detail">
+        <div class="detail-inner">
+          <button class="detail-close" onclick="toggleDetail('d1')">
+            ← Tutup Arsip
+          </button>
+          <div class="detail-title">Krisis Moneter 1997–1998</div>
+          <div class="detail-body">
+            <div>
+              <p>
+                Pada pertengahan 1997, badai keuangan melanda Asia Tenggara.
+                Thailand menjadi titik awal, namun Indonesia yang merasakan
+                dampak paling brutal. Dalam hitungan bulan, nilai tukar Rupiah
+                terhadap Dolar AS anjlok dari sekitar Rp 2.600 menjadi lebih
+                dari Rp 16.000 — penurunan 80% yang belum pernah terjadi
+                sebelumnya.
+              </p>
+              <p>
+                Bank-bank berjatuhan. Perusahaan-perusahaan yang selama Orde
+                Baru diproteksi rezim tiba-tiba bangkrut. Pengangguran melonjak
+                dramatis. Harga bahan pokok — beras, minyak goreng, tepung —
+                melambung jauh di luar jangkauan rakyat biasa.
+              </p>
+            </div>
+            <div>
+              <p>
+                Dana Moneter Internasional (IMF) datang membawa pinjaman darurat
+                dengan syarat-syarat yang menyakitkan: pencabutan subsidi,
+                liberalisasi ekonomi, pemangkasan anggaran negara. Soeharto
+                menandatangani kesepakatan IMF dalam sebuah foto ikonik yang
+                disaksikan seluruh dunia.
+              </p>
+              <p>
+                Namun krisis ekonomi ini hanyalah katalisator. Di baliknya,
+                rakyat Indonesia sudah menyimpan amarah yang bertahun-tahun
+                dipendamkan: korupsi, nepotisme, dan ketidakadilan yang
+                dilembagakan oleh Orde Baru selama 32 tahun.
+              </p>
+            </div>
+            <div class="detail-pull">
+              Rupiah anjlok 80%. Bukan sekadar krisis ekonomi — ini adalah
+              runtuhnya legitimasi sebuah rezim.
+            </div>
+          </div>
+          <div class="detail-facts">
+            <span class="fact-chip">Rp 2.600 → Rp 16.000</span>
+            <span class="fact-chip">Inflasi 77% (1998)</span>
+            <span class="fact-chip">IMF Bailout $43 Miliar</span>
+            <span class="fact-chip">Pertumbuhan GDP -13.1%</span>
+            <span class="fact-chip">Pengangguran naik 3x lipat</span>
+          </div>
+        </div>
+      </div>
+      <div id="d2" class="materi-detail">
+        <div class="detail-inner">
+          <button class="detail-close" onclick="toggleDetail('d2')">
+            ← Tutup Arsip
+          </button>
+          <div class="detail-title">Orde Baru & Kekuasaan Soeharto</div>
+          <div class="detail-body">
+            <div>
+              <p>
+                Soeharto naik ke kekuasaan pada 1966, memanfaatkan kekacauan
+                pasca-G30S/PKI untuk melengserkan Sukarno. Ia mendirikan apa
+                yang disebutnya "Orde Baru" — sebuah rezim yang menjanjikan
+                stabilitas dan pembangunan ekonomi di atas fondasi militer dan
+                represi politik.
+              </p>
+              <p>
+                Selama tiga dekade, Indonesia memang mencatat pertumbuhan
+                ekonomi yang signifikan. Angka kemiskinan turun drastis.
+                Infrastruktur dibangun. Namun semua ini dibayar mahal: demokrasi
+                dikubur, oposisi dibungkam, dan korupsi menjadi cara hidup di
+                semua lini pemerintahan.
+              </p>
+            </div>
+            <div>
+              <p>
+                Sistem dwifungsi ABRI menempatkan militer di dalam kehidupan
+                sipil. Partai Golkar memonopoli politik. Pers dikendalikan
+                melalui SIUPP. Pemilu lima tahunan digelar, namun hasilnya sudah
+                diketahui sebelum dimulai.
+              </p>
+              <p>
+                Keluarga Soeharto menguasai bisnis di hampir seluruh sektor —
+                dari cengkeh hingga mobil nasional. Di puncak kejayaannya,
+                kekayaan keluarga Soeharto diperkirakan mencapai miliaran dolar.
+                Sementara itu, rakyat yang mengeluh bisa berakhir di penjara —
+                atau lebih buruk.
+              </p>
+            </div>
+            <div class="detail-pull">
+              "Korupsi, kolusi, nepotisme bukan anomali — ia adalah sistem itu
+              sendiri."
+            </div>
+          </div>
+          <div class="detail-facts">
+            <span class="fact-chip">1966–1998 (32 tahun)</span>
+            <span class="fact-chip">7 Kali "Terpilih"</span>
+            <span class="fact-chip">Dwifungsi ABRI</span>
+            <span class="fact-chip">Korupsi $15-35 Miliar</span>
+            <span class="fact-chip">Monopoli Golkar</span>
+          </div>
+        </div>
+      </div>
+      <div id="d3" class="materi-detail">
+        <div class="detail-inner">
+          <button class="detail-close" onclick="toggleDetail('d3')">
+            ← Tutup Arsip
+          </button>
+          <div class="detail-title">Gerakan Mahasiswa 1998</div>
+          <div class="detail-body">
+            <div>
+              <p>
+                Gerakan mahasiswa 1998 bukanlah gerakan yang lahir tiba-tiba.
+                Selama bertahun-tahun, aktivisme mahasiswa telah ditekan melalui
+                NKK/BKK — kebijakan yang memaksa kampus menjadi ruang
+                depolitisasi. Namun krisis ekonomi 1997 menjebol bendungan itu.
+              </p>
+              <p>
+                Mulai awal 1998, aksi-aksi kecil di berbagai kampus mulai
+                bermunculan. Universitas Indonesia, Trisakti, Atma Jaya, Gadjah
+                Mada, Diponegoro, Airlangga — semua mendidih. Tuntutannya satu:
+                Reformasi Total. Turunkan Soeharto.
+              </p>
+            </div>
+            <div>
+              <p>
+                Titik balik terjadi pada 12 Mei 1998. Di kampus Universitas
+                Trisakti, aparat menembak mahasiswa yang sedang berdemonstrasi.
+                Empat gugur: Elang Mulia Lesmana, Hendriawan Sie, Hafidin Royan,
+                dan Hery Hartanto. Mereka menjadi martir Reformasi.
+              </p>
+              <p>
+                Keempat nama itu menyulut kemarahan nasional. Dua hari kemudian,
+                Jakarta membara. Dan pada 18 Mei, ribuan mahasiswa menduduki
+                Gedung DPR/MPR — simbol kekuasaan Orde Baru — selama
+                berhari-hari hingga Soeharto menyatakan mundur.
+              </p>
+            </div>
+            <div class="detail-pull">
+              Elang, Hendriawan, Hafidin, Hery — empat nama yang mengubah
+              sejarah Indonesia selamanya.
+            </div>
+          </div>
+          <div class="detail-facts">
+            <span class="fact-chip">12 Mei 1998 — Trisakti</span>
+            <span class="fact-chip">4 Mahasiswa Gugur</span>
+            <span class="fact-chip">18 Mei — DPR Diduduki</span>
+            <span class="fact-chip">Ratusan Ribu Demonstran</span>
+            <span class="fact-chip">50+ Kampus Bergerak</span>
+          </div>
+        </div>
+      </div>
+      <div id="d4" class="materi-detail">
+        <div class="detail-inner">
+          <button class="detail-close" onclick="toggleDetail('d4')">
+            ← Tutup Arsip
+          </button>
+          <div class="detail-title">Peralihan Kekuasaan 21 Mei 1998</div>
+          <div class="detail-body">
+            <div>
+              <p>
+                Pagi hari 21 Mei 1998 masih dingin ketika pejabat dan wartawan
+                mulai berkumpul di Istana Merdeka. Selama beberapa hari
+                sebelumnya, sinyal-sinyal semakin jelas: Soeharto akan mundur.
+                Ketua DPR Harmoko telah memintanya. Para menteri kabinetnya
+                mulai mengundurkan diri satu per satu.
+              </p>
+              <p>
+                Tepat pukul 09:05 WIB, Soeharto muncul di podium. Ia membacakan
+                pernyataan pengunduran dirinya dengan suara datar, hampir tanpa
+                ekspresi. "Saya memutuskan untuk menyatakan berhenti dari
+                jabatan saya sebagai Presiden Republik Indonesia." Tiga puluh
+                dua tahun berakhir dalam dua menit.
+              </p>
+            </div>
+            <div>
+              <p>
+                Tak lama berselang, di ruangan yang sama, B.J. Habibie — wakil
+                presiden yang belum genap dua bulan menjabat — diambil sumpahnya
+                oleh Ketua Mahkamah Agung Sarwata. Habibie menangis. Di luar
+                gedung, ribuan mahasiswa yang masih berkumpul di DPR meledak
+                dalam sorak kemenangan.
+              </p>
+              <p>
+                Transisi kekuasaan ini berlangsung konstitusional, mengikuti
+                Pasal 8 UUD 1945. Namun di balik kelancaran prosedural itu,
+                tersembunyi tekanan luar biasa: ancaman kekerasan, desakan
+                internasional, dan kelelahan sebuah bangsa yang sudah
+                bertahun-tahun berjuang.
+              </p>
+            </div>
+            <div class="detail-pull">
+              "09:05 WIB, 21 Mei 1998. Sebuah era berakhir. Sebuah bangsa
+              memulai perjalanan baru."
+            </div>
+          </div>
+          <div class="detail-facts">
+            <span class="fact-chip">21 Mei 1998 — 09:05 WIB</span>
+            <span class="fact-chip">Istana Merdeka, Jakarta</span>
+            <span class="fact-chip">Pasal 8 UUD 1945</span>
+            <span class="fact-chip">Habibie Presiden Ke-3</span>
+            <span class="fact-chip">Transisi Damai</span>
+          </div>
+        </div>
+      </div>
+      <div id="d5" class="materi-detail">
+        <div class="detail-inner">
+          <button class="detail-close" onclick="toggleDetail('d5')">
+            ← Tutup Arsip
+          </button>
+          <div class="detail-title">Warisan & Dampak Reformasi</div>
+          <div class="detail-body">
+            <div>
+              <p>
+                Reformasi 1998 membuka babak yang belum pernah ada dalam sejarah
+                Indonesia merdeka: demokrasi multipartai yang sesungguhnya.
+                Habibie, dalam masa jabatannya yang singkat, meluncurkan
+                serangkaian reformasi fundamental — kebebasan pers, pembebasan
+                tahanan politik, otonomi daerah, dan yang paling monumental:
+                mengizinkan pemilu bebas 1999.
+              </p>
+              <p>
+                Pemilu Juni 1999 diikuti 48 partai politik. Pemantau
+                internasional menyebutnya jujur dan adil — standar yang belum
+                pernah dicapai sejak 1955. PDI-P muncul sebagai pemenang.
+                Demokrasi Indonesia lahir dengan segala kerapuhannya.
+              </p>
+            </div>
+            <div>
+              <p>
+                Amandemen UUD 1945 dilakukan empat kali antara 1999–2002,
+                mengubah secara fundamental sistem ketatanegaraan Indonesia.
+                Pemilihan presiden langsung diterapkan pertama kali pada 2004.
+                KPK dibentuk untuk memberantas korupsi. Desentralisasi
+                mengalihkan kewenangan ke daerah.
+              </p>
+              <p>
+                Namun warisan Reformasi tidak sesederhana kemenangan. Korupsi
+                bermigrasi ke level lokal. Oligarki lama beradaptasi dalam
+                pakaian baru. Para aktivis 1998 kini tersebar — ada yang menjadi
+                negarawan, ada yang kecewa, ada yang terus berjuang. Reformasi
+                adalah awal, bukan akhir.
+              </p>
+            </div>
+            <div class="detail-pull">
+              Reformasi membuka pintu. Yang berjalan masuk — atau tidak — adalah
+              pilihan setiap generasi berikutnya.
+            </div>
+          </div>
+          <div class="detail-facts">
+            <span class="fact-chip">Pemilu Bebas 1999</span>
+            <span class="fact-chip">4× Amandemen UUD 1945</span>
+            <span class="fact-chip">Pilpres Langsung 2004</span>
+            <span class="fact-chip">KPK Dibentuk 2002</span>
+            <span class="fact-chip">Otonomi Daerah</span>
+            <span class="fact-chip">Kebebasan Pers</span>
+          </div>
+        </div>
+      </div>
+      <!-- Footer materi -->
+      <div id="footer" style="margin-top: 4rem">
+        <div class="footer-title">
+          Arsip Sinematik Interaktif — Reformasi Indonesia 1998
+        </div>
+        <div class="footer-note">
+          Lima topik utama · Dokumentasi historis · Untuk generasi penerus
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== CURSOR ===== -->
+    <script src="script.js"></script>
+  </body>
+</html>

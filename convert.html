@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <title>SVG to PNG Converter</title>
+  </head>
+  <body>
+    <h1>Converting SVGs to PNG...</h1>
+
+    <svg id="svg1" style="display: none"></svg>
+    <canvas id="canvas1"></canvas>
+
+    <script>
+      async function convertSvgToPng() {
+        const svgFiles = [
+          { input: "krisis_ekonomi.svg", output: "krisis_ekonomi.png" },
+          {
+            input: "gelombang_mahasiswa.svg",
+            output: "gelombang_mahasiswa.png",
+          },
+          { input: "krisis_kepercayaan.svg", output: "krisis_kepercayaan.png" },
+        ];
+
+        for (const file of svgFiles) {
+          try {
+            const response = await fetch(file.input);
+            const svgText = await response.text();
+            const svg = new DOMParser().parseFromString(
+              svgText,
+              "image/svg+xml",
+            ).documentElement;
+
+            const canvas = document.getElementById("canvas1");
+            const ctx = canvas.getContext("2d");
+
+            const width = 400;
+            const height = 300;
+            canvas.width = width;
+            canvas.height = height;
+
+            const svgImage = new Image();
+            svgImage.onload = function () {
+              ctx.drawImage(svgImage, 0, 0);
+              const pngData = canvas.toDataURL("image/png");
+
+              const link = document.createElement("a");
+              link.href = pngData;
+              link.download = file.output;
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+
+              console.log(`✓ Converted ${file.input} to ${file.output}`);
+            };
+
+            svgImage.src = "data:image/svg+xml;base64," + btoa(svgText);
+          } catch (err) {
+            console.error(`Error converting ${file.input}: ${err}`);
+          }
+        }
+      }
+
+      convertSvgToPng();
+    </script>
+  </body>
+</html>

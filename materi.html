@@ -1,0 +1,1139 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reformasi 1998 - Economic Crisis</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+    <script src="/_sdk/element_sdk.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&amp;family=DM+Serif+Display&amp;family=Source+Code+Pro:wght@400;700&amp;family=Crimson+Pro:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  </head>
+  <body class="h-full">
+    <!-- CUSTOM CURSOR -->
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+    <div id="cursor-trail"></div>
+
+    <!-- TOP NAVIGATION -->
+    <nav id="topnav">
+      <div class="topnav-logo" onclick="window.location.href = 'index.html'">
+        REFORMASI <span>1998</span>
+      </div>
+      <div class="topnav-links">
+        <button
+          class="topnav-btn"
+          onclick="window.location.href = 'index.html'"
+        >
+          Beranda
+        </button>
+        <button
+          class="topnav-btn active"
+          onclick="window.location.href = 'materi.html'"
+        >
+          Materi
+        </button>
+        <button
+          class="topnav-btn"
+          onclick="window.location.href = 'aboutus.html'"
+        >
+          About Us
+        </button>
+      </div>
+    </nav>
+
+    <div
+      id="app"
+      class="h-full w-full overflow-auto bg-[#0a0505] text-[#e8ddd0] relative"
+    >
+      <!-- Grain overlay -->
+      <div class="grain-overlay"></div>
+      <!-- Red warning glow -->
+      <div class="red-warning"></div>
+      <!-- Floating rupiah notes -->
+      <div
+        id="floating-notes"
+        class="fixed inset-0 pointer-events-none z-10 overflow-hidden"
+      ></div>
+      <!-- Background charts -->
+      <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <svg
+          class="chart-bg"
+          style="top: 10%; left: 5%; width: 300px; height: 200px"
+          viewbox="0 0 100 100"
+        >
+          <polyline
+            fill="none"
+            stroke="#ff3030"
+            stroke-width="0.5"
+            points="0,20 10,22 20,18 30,25 40,30 50,45 60,70 70,85 80,90 90,95 100,98"
+          />
+        </svg>
+        <svg
+          class="chart-bg"
+          style="top: 40%; right: 5%; width: 250px; height: 150px"
+          viewbox="0 0 100 100"
+        >
+          <polyline
+            fill="none"
+            stroke="#ff3030"
+            stroke-width="0.5"
+            points="0,10 15,12 30,15 45,20 55,40 65,65 75,80 85,92 100,97"
+          />
+        </svg>
+      </div>
+      <!-- Smoke particles -->
+      <div class="fixed inset-0 pointer-events-none z-5 overflow-hidden">
+        <div
+          class="smoke-particle"
+          style="left: 10%; bottom: 0; animation-delay: 0s"
+        ></div>
+        <div
+          class="smoke-particle"
+          style="left: 30%; bottom: 0; animation-delay: 2s"
+        ></div>
+        <div
+          class="smoke-particle"
+          style="left: 60%; bottom: 0; animation-delay: 4s"
+        ></div>
+        <div
+          class="smoke-particle"
+          style="left: 80%; bottom: 0; animation-delay: 1s"
+        ></div>
+      </div>
+      <!-- TICKER BAR -->
+      <div
+        class="fixed top-0 left-0 right-0 z-50 bg-[#1a0000] border-b border-red-900/50 py-1"
+      >
+        <div class="ticker-bar">
+          <span
+            class="ticker-text mono-font text-red-500 text-xs tracking-wider"
+          >
+            ▼ USD/IDR 16,800 ▼ IHSG -12.4% ▼ INFLASI 77.6% ▼ CADANGAN DEVISA
+            $14.4B ▼ UTANG LUAR NEGERI $138B ▼ PHK MASSAL 20 JUTA ▼ BANK
+            LIKUIDASI 16 BANK ▼ PERTUMBUHAN -13.1% ▼ KEMISKINAN 49.5 JUTA ▼
+            RUPIAH KOLAPS ▼ IMF BAILOUT $43B ▼ USD/IDR 16,800 ▼ IHSG -12.4% ▼
+            INFLASI 77.6% ▼
+          </span>
+        </div>
+      </div>
+      <!-- HERO SECTION -->
+      <section
+        class="relative min-h-[100%] flex items-center justify-center pt-12"
+        id="hero"
+      >
+        <div class="scan-line"></div>
+        <!-- Crisis numbers floating -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+          <span
+            class="crisis-number absolute text-4xl"
+            style="top: 15%; left: 10%; animation-delay: 0s"
+            >17.876</span
+          >
+          <span
+            class="crisis-number absolute text-2xl"
+            style="top: 30%; right: 15%; animation-delay: 0.5s"
+            >+5,05%</span
+          >
+          <span
+            class="crisis-number absolute text-3xl"
+            style="top: 60%; left: 20%; animation-delay: 1s"
+            >77.6%</span
+          >
+          <span
+            class="crisis-number absolute text-xl"
+            style="top: 75%; right: 25%; animation-delay: 1.5s"
+            >$145B</span
+          >
+          <span
+            class="crisis-number absolute text-2xl"
+            style="top: 45%; left: 60%; animation-delay: 0.8s"
+            >-12.4%</span
+          >
+        </div>
+        <div class="relative z-20 text-center px-6 max-w-5xl">
+          <div class="mb-6">
+            <span
+              class="mono-font text-red-500 text-xs tracking-[0.3em] uppercase border border-red-900/50 px-4 py-1 inline-block"
+              >Dokumen Sejarah Ekonomi Indonesia</span
+            >
+          </div>
+          <h1
+            id="main-title"
+            class="headline-font text-5xl md:text-8xl font-black leading-[0.9] mb-6 tracking-tight"
+            style="text-shadow: 0 0 60px rgba(200, 0, 0, 0.3)"
+          >
+            KETIKA RUPIAH<br /><span class="text-red-600">RUNTUH</span>
+          </h1>
+          <p
+            id="subtitle"
+            class="serif-font text-xl md:text-2xl text-[#a09080] max-w-2xl mx-auto mb-10"
+          >
+            Dari Krisis Moneter 1998 hingga Tantangan Rupiah Masa Kini
+          </p>
+          <!-- Dramatic rupiah display -->
+          <div class="glass-panel rounded-lg p-8 max-w-lg mx-auto mb-8">
+            <div class="mono-font text-sm text-red-400 mb-2">
+              USD/IDR EXCHANGE RATE
+            </div>
+            <div class="flex items-baseline justify-center gap-3">
+              <span class="mono-font text-lg text-[#666]">Rp 2,400</span>
+              <span class="text-red-500">→</span>
+              <span
+                class="mono-font text-4xl md:text-5xl text-red-500 font-bold"
+                id="rupiah-counter"
+                >Rp 17.876</span
+              >
+            </div>
+            <div class="mono-font text-xs text-red-600 mt-2">
+              ▼ 4.5% DEPRESIASI
+            </div>
+          </div>
+          <div class="animate-bounce mt-8 text-[#555]">
+            <i
+              data-lucide="chevrons-down"
+              style="width: 32px; height: 32px"
+              class="mx-auto"
+            ></i>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 1: ECONOMIC COLLAPSE -->
+      <section class="relative py-24 px-6 section-reveal" data-section="1">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <span class="mono-font text-red-600 text-xs tracking-[0.2em]"
+                >BAB I</span
+              >
+              <h2
+                id="section-1-title"
+                class="headline-font text-4xl md:text-6xl font-black mt-3 mb-6"
+              >
+                KOLAPS<br />
+                EKONOMI
+              </h2>
+              <div
+                class="body-font text-lg text-[#a09080] leading-relaxed space-y-4"
+              >
+                <p>
+                  Juli 1997 menjadi awal dari krisis yang mengguncang Indonesia.
+                  Krisis finansial Asia yang bermula di Thailand menyebar ke
+                  berbagai negara, termasuk Indonesia. Ketergantungan terhadap
+                  utang luar negeri, lemahnya sektor perbankan, serta praktik
+                  KKN membuat fondasi ekonomi nasional tidak sekuat yang
+                  terlihat selama masa Orde Baru.
+                </p>
+                <p>
+                  Bank-bank kolaps satu per satu. Likuidasi 16 bank swasta
+                  memicu kepanikan massal. Antrian panjang nasabah yang ingin
+                  menarik uang menjadi pemandangan sehari-hari. Sistem ekonomi
+                  yang dibangun selama 30 tahun runtuh dalam hitungan bulan.
+                </p>
+              </div>
+            </div>
+            <div class="relative">
+              <!-- Newspaper-style card -->
+              <div
+                class="vintage-card p-6 rounded-sm transform rotate-[-2deg] card-tilt"
+              >
+                <div class="border-b-2 border-[#2a1810] pb-2 mb-3">
+                  <span class="text-xs tracking-widest uppercase"
+                    >KOMPAS • 1 November 1997</span
+                  >
+                </div>
+                <h3 class="headline-font text-2xl text-[#2a1810] mb-2">
+                  RUPIAH TERUS MEROSOT, PASAR PANIK
+                </h3>
+                <p class="text-sm text-[#4a3828] body-font">
+                  Nilai tukar rupiah terhadap dolar AS kembali mencatat rekor
+                  terendah. Para ekonom memperingatkan dampak yang lebih buruk
+                  jika tidak ada intervensi segera dari pemerintah...
+                </p>
+              </div>
+              <div
+                class="glass-panel p-5 rounded-lg transform rotate-[1deg] mt-[-20px] ml-8 card-tilt"
+              >
+                <div class="mono-font text-xs text-red-400 mb-2">
+                  IHSG INDEX
+                </div>
+                <svg viewbox="0 0 200 80" class="w-full">
+                  <polyline
+                    fill="none"
+                    stroke="#dc2626"
+                    stroke-width="2"
+                    points="0,10 20,12 40,15 60,18 80,25 100,40 120,55 140,65 160,72 180,75 200,78"
+                    stroke-linecap="round"
+                  />
+                  <polyline
+                    fill="none"
+                    stroke="#dc262644"
+                    stroke-width="1"
+                    stroke-dasharray="3,3"
+                    points="0,10 200,10"
+                  />
+                </svg>
+                <div
+                  class="flex justify-between mono-font text-xs text-[#666] mt-2"
+                >
+                  <span>Jul '97</span><span>Jan '98</span><span>Jun '98</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 2: RUPIAH CRISIS -->
+      <section class="relative py-24 px-6 section-reveal" data-section="2">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-16">
+            <span class="mono-font text-red-600 text-xs tracking-[0.2em]"
+              >BAB II</span
+            >
+            <h2
+              id="section-2-title"
+              class="headline-font text-4xl md:text-6xl font-black mt-3"
+            >
+              KRISIS RUPIAH
+            </h2>
+          </div>
+          <!-- Dramatic exchange rate timeline -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+            <div class="glass-panel p-5 rounded-lg text-center card-tilt">
+              <div class="mono-font text-xs text-[#666] mb-1">JUL 1997</div>
+              <div class="mono-font text-xl text-[#ccc]">Rp 2,400</div>
+              <div class="text-xs text-green-600">Stabil</div>
+            </div>
+            <div class="glass-panel p-5 rounded-lg text-center card-tilt">
+              <div class="mono-font text-xs text-[#666] mb-1">OKT 1997</div>
+              <div class="mono-font text-xl text-yellow-500">Rp 3,600</div>
+              <div class="text-xs text-yellow-600">▼ -50%</div>
+            </div>
+            <div class="glass-panel p-5 rounded-lg text-center card-tilt">
+              <div class="mono-font text-xs text-[#666] mb-1">JAN 1998</div>
+              <div class="mono-font text-xl text-orange-500">Rp 10,000</div>
+              <div class="text-xs text-orange-600">▼ -317%</div>
+            </div>
+            <div
+              class="glass-panel p-5 rounded-lg text-center border border-red-800/50 card-tilt"
+            >
+              <div class="mono-font text-xs text-[#666] mb-1">JUN 1998</div>
+              <div class="mono-font text-2xl text-red-500 font-bold">
+                Rp 17.876
+              </div>
+              <div class="text-xs text-red-600">▼ -600%</div>
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="body-font text-lg text-[#a09080] leading-relaxed">
+              <p>
+                Rupiah kehilangan lebih dari 80% nilainya dalam waktu kurang
+                dari satu tahun. Harga-harga barang kebutuhan pokok melonjak
+                tidak terkendali. Inflasi mencapai 77.6% — tertinggi dalam
+                sejarah Indonesia modern.
+              </p>
+              <p class="mt-4">
+                Pada awal 1997 nilai tukar rupiah masih berada di kisaran
+                Rp2.300 per dolar AS. Namun dalam waktu kurang dari satu tahun,
+                rupiah kehilangan sebagian besar nilainya hingga sempat menembus
+                Rp16.000 per dolar AS. Pelemahan ini menyebabkan harga barang
+                impor dan kebutuhan pokok meningkat tajam.
+              </p>
+              <p class="mt-4">
+                Masyarakat berbondong-bondong ke toko untuk menimbun sembako.
+                Rak-rak supermarket kosong. Harga beras naik tiga kali lipat.
+                Minyak goreng menjadi barang mewah.
+              </p>
+            </div>
+            <div
+              class="vintage-card p-5 rounded-sm transform rotate-[1deg] card-tilt"
+            >
+              <div class="border-b border-[#4a3828] pb-2 mb-3">
+                <span class="text-xs tracking-widest uppercase font-bold"
+                  >DAMPAK KURS</span
+                >
+              </div>
+              <div class="space-y-3 text-sm">
+                <div class="flex justify-between">
+                  <span>Beras (per kg)</span
+                  ><span class="font-bold">Rp 1,000 → Rp 3,500</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Minyak Goreng</span
+                  ><span class="font-bold">Rp 2,500 → Rp 9,000</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Gula</span
+                  ><span class="font-bold">Rp 1,500 → Rp 5,000</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Susu</span
+                  ><span class="font-bold">Rp 3,000 → Rp 12,000</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 3: PUBLIC PANIC -->
+      <section class="relative py-24 px-6 section-reveal" data-section="3">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid md:grid-cols-5 gap-8">
+            <div class="md:col-span-3">
+              <span class="mono-font text-red-600 text-xs tracking-[0.2em]"
+                >BAB III</span
+              >
+              <h2
+                id="section-3-title"
+                class="headline-font text-4xl md:text-5xl font-black mt-3 mb-6"
+              >
+                RAKYAT DALAM<br />
+                KEPANIKAN
+              </h2>
+              <div
+                class="body-font text-lg text-[#a09080] leading-relaxed space-y-4"
+              >
+                <p>
+                  Ketika 16 bank dilikuidasi (penutupan atau pembubaran suatu
+                  perusahaan) pada November 1997, jutaan nasabah kehilangan
+                  akses ke tabungan mereka. Antrian di depan bank mengular
+                  berkilometer. Kerusuhan pecah di berbagai kota.
+                </p>
+                <p>
+                  Mei 1998 menjadi puncak kerusuhan. Kerusuhan rasial dan
+                  penjarahan terjadi di Jakarta, Solo, Medan, dan kota-kota
+                  besar lainnya. Lebih dari 1,000 orang tewas. Properti hancur.
+                  Kepercayaan publik runtuh total.
+                </p>
+              </div>
+            </div>
+            <div class="md:col-span-2 space-y-4">
+              <div class="glass-panel p-4 rounded-lg card-tilt">
+                <div class="flex items-center gap-3 mb-2">
+                  <div
+                    class="w-2 h-2 bg-red-500 rounded-full animate-pulse"
+                  ></div>
+                  <span class="mono-font text-xs text-red-400"
+                    >BREAKING NEWS</span
+                  >
+                </div>
+                <p class="serif-font text-sm text-[#ccc]">
+                  Bank Indonesia mengumumkan likuidasi 16 bank swasta nasional.
+                  Nasabah diminta tenang.
+                </p>
+              </div>
+              <div class="glass-panel p-4 rounded-lg card-tilt">
+                <div class="flex items-center gap-3 mb-2">
+                  <div
+                    class="w-2 h-2 bg-red-500 rounded-full animate-pulse"
+                  ></div>
+                  <span class="mono-font text-xs text-red-400">BULLETIN</span>
+                </div>
+                <p class="serif-font text-sm text-[#ccc]">
+                  Kerusuhan pecah di Jakarta. Pusat perbelanjaan dibakar. TNI
+                  diterjunkan.
+                </p>
+              </div>
+              <div class="glass-panel p-4 rounded-lg card-tilt">
+                <div class="flex items-center gap-3 mb-2">
+                  <div
+                    class="w-2 h-2 bg-red-500 rounded-full animate-pulse"
+                  ></div>
+                  <span class="mono-font text-xs text-red-400">URGENT</span>
+                </div>
+                <p class="serif-font text-sm text-[#ccc]">
+                  PHK massal menimpa 20 juta pekerja. Kemiskinan melonjak dari
+                  11% ke 24%.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 4: IMF & FOREIGN DEBT -->
+      <section class="relative py-24 px-6 section-reveal" data-section="4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <span class="mono-font text-red-600 text-xs tracking-[0.2em]"
+              >BAB IV</span
+            >
+            <h2
+              id="section-4-title"
+              class="headline-font text-4xl md:text-6xl font-black mt-3"
+            >
+              GELOMBANG<br />
+              REFORMASI
+            </h2>
+          </div>
+          <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <div class="glass-panel p-6 rounded-lg text-center card-tilt">
+              <div class="mono-font text-3xl text-red-500 font-bold mb-2">
+                4 Mahasiswa
+              </div>
+              <div class="text-sm text-[#888]">Gugur dalam Tragedi Trasekti</div>
+            </div>
+            <div class="glass-panel p-6 rounded-lg text-center card-tilt">
+              <div class="mono-font text-3xl text-red-500 font-bold mb-2">
+                6 Kota Besar
+              </div>
+              <div class="text-sm text-[#888]">Gelombang Demontrasi Nasional</div>
+            </div>
+            <div class="glass-panel p-6 rounded-lg text-center card-tilt">
+              <div class="mono-font text-3xl text-red-500 font-bold mb-2">
+                21 Mei 1998
+              </div>
+              <div class="text-sm text-[#888]">Soeharto Mengundurkan Diri</div>
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="body-font text-lg text-[#a09080] leading-relaxed">
+              <p>
+                Krisis ekonomi yang berkepanjangan memicu gelombang protes di
+                berbagai daerah. Mahasiswa dari Universitas Indonesia, Trisakti,
+                Gadjah Mada, Airlangga, dan kampus lainnya turun ke jalan
+                menuntut perubahan besar dalam sistem pemerintahan.
+              </p>
+              <p class="mt-4">
+                Tuntutan mereka tidak hanya soal harga kebutuhan pokok yang
+                semakin mahal, tetapi juga penghapusan Korupsi, Kolusi, dan
+                Nepotisme (KKN), kebebasan berpendapat, serta reformasi politik
+                yang lebih demokratis.
+              </p>
+            </div>
+            <div
+              class="vintage-card p-5 rounded-sm transform rotate-[-1deg] card-tilt relative overflow-hidden"
+            >
+              <div class="scan-line"></div>
+              <div class="border-b border-[#4a3828] pb-2 mb-3">
+                <span class="text-xs tracking-widest uppercase font-bold"
+                  >KRONOLOGI MEI 1998</span
+                >
+              </div>
+              <div class="text-xs space-y-2 body-font">
+                <p>• 4 Mei 1998 — Harga BBM naik hingga 71%</p>
+                <p>• 12 Mei 1998 — Tragedi Trisakti menewaskan 4 mahasiswa</p>
+                <p>
+                  • 13–15 Mei 1998 — Kerusuhan besar terjadi di Jakarta dan
+                  berbagai kota
+                </p>
+                <p>• 18 Mei 1998 — Ribuan mahasiswa menduduki Gedung DPR/MPR</p>
+                <p>• 21 Mei 1998 — Soeharto mengundurkan diri</p>
+              </div>
+              <div
+                class="absolute bottom-2 right-3 mono-font text-[10px] text-[#888]"
+              >
+                15 Januari 1998
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 5: DEMONSTRATIONS -->
+      <section class="relative py-24 px-6 section-reveal" data-section="5">
+        <div class="max-w-6xl mx-auto">
+          <span class="mono-font text-red-600 text-xs tracking-[0.2em]"
+            >BAB V</span
+          >
+          <h2
+            id="section-5-title"
+            class="headline-font text-4xl md:text-6xl font-black mt-3 mb-8"
+          >
+            AKHIR<br />
+            ORDE BARU
+          </h2>
+          <div class="grid md:grid-cols-2 gap-12">
+            <div
+              class="body-font text-lg text-[#a09080] leading-relaxed space-y-4"
+            >
+              <p>
+                Setelah lebih dari 32 tahun memimpin Indonesia, Presiden
+                Soeharto menghadapi tekanan yang semakin besar dari masyarakat,
+                mahasiswa, dan elite politik. Krisis ekonomi yang belum membaik
+                membuat kepercayaan publik terhadap pemerintah terus menurun.
+              </p>
+              <p>
+                Pada pagi hari tanggal 21 Mei 1998, Soeharto secara resmi
+                mengumumkan pengunduran dirinya di Istana Merdeka. Wakil
+                Presiden B.J. Habibie kemudian dilantik sebagai Presiden
+                Republik Indonesia yang ketiga. Peristiwa tersebut menandai
+                berakhirnya era Orde Baru dan menjadi awal lahirnya Era
+                Reformasi.
+              </p>
+            </div>
+            <div class="space-y-4">
+              <div
+                class="glass-panel p-5 rounded-lg border-l-4 border-red-700 card-tilt"
+              >
+                <div class="serif-font text-lg text-[#ddd] italic">
+                  ""Saya memutuskan untuk menyatakan berhenti dari jabatan
+                  Presiden Republik Indonesia.""
+                </div>
+                <div class="mono-font text-xs text-[#666] mt-2">
+                  — Presiden Soeharto, 21 Mei 1998
+                </div>
+              </div>
+              <div style="display: grid; gap: 12px; position: relative">
+                <!-- Stat 1 -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
+                  <div class="glass-panel p-6 rounded-lg card-tilt" style="border: 1px solid rgba(212, 68, 36, 0.2); backdrop-filter: blur(10px);">
+                    <div class="mono-font text-3xl text-red-600 font-bold mb-2">32</div>
+                    <div class="text-xs text-[#888] font-medium">Tahun Kepemimpinan</div>
+                    <div class="text-xs text-[#666] mt-2">Masa pemerintahan Soeharto</div>
+                  </div>
+                  <div class="glass-panel p-6 rounded-lg card-tilt" style="border: 1px solid rgba(212, 68, 36, 0.2); backdrop-filter: blur(10px);">
+                    <div class="mono-font text-2xl text-red-600 font-bold mb-2">21 Mei</div>
+                    <div class="text-xs text-[#888] font-medium">Pengunduran Diri</div>
+                    <div class="text-xs text-[#666] mt-2">Akhir Era Soeharto</div>
+                  </div>
+                  <div class="glass-panel p-6 rounded-lg card-tilt" style="border: 1px solid rgba(212, 68, 36, 0.2); backdrop-filter: blur(10px);">
+                    <div class="mono-font text-2xl text-red-600 font-bold mb-2">Ke-3</div>
+                    <div class="text-xs text-[#888] font-medium">Presiden Baru</div>
+                    <div class="text-xs text-[#666] mt-2">B.J. Habibie Dilantik</div>
+                  </div>
+                </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+<!-- SECTION 6 -->
+<!-- SECTION 6: INDONESIA BANGKIT KEMBALI -->
+<section class="relative py-24 px-6 section-reveal" data-section="6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <span class="mono-font text-green-600 text-xs tracking-[0.2em]">BAB VI</span>
+      <h2
+        id="section-6-title"
+        class="headline-font text-4xl md:text-6xl font-black mt-3"
+      >
+        INDONESIA<br />
+        BANGKIT KEMBALI
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 mb-16 items-start">
+      <div class="body-font text-lg text-[#a09080] leading-relaxed space-y-4">
+        <p>
+          Setelah melewati masa krisis yang berat, Indonesia mulai melakukan
+          berbagai reformasi di bidang politik dan ekonomi. Pemerintah membuka
+          ruang kebebasan pers, memperkuat demokrasi, serta menyelenggarakan
+          pemilu yang lebih bebas dan transparan.
+        </p>
+        <p>
+          Di sektor ekonomi, sistem perbankan diperbaiki, investasi kembali
+          tumbuh, dan nilai tukar rupiah perlahan menjadi lebih stabil.
+          Meskipun proses pemulihan membutuhkan waktu bertahun-tahun, Indonesia
+          berhasil keluar dari salah satu krisis terbesar dalam sejarahnya.
+        </p>
+      </div>
+
+      <div
+        class="glass-panel p-5 rounded-lg border-l-4 border-green-700 card-tilt"
+      >
+        <div class="serif-font text-xl italic text-[#ccc] leading-relaxed">
+          "Dari abu krisis, Indonesia membangun kembali fondasi demokrasinya."
+        </div>
+        <div class="mono-font text-xs text-[#666] mt-3">
+          — Catatan Reformasi Indonesia
+        </div>
+      </div>
+    </div>
+
+    <!-- Timeline cards -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div
+        class="glass-panel p-5 rounded-lg text-center card-tilt"
+        style="border: 1px solid rgba(34, 197, 94, 0.25)"
+      >
+        <div class="mono-font text-3xl text-green-500 font-bold mb-3">1999</div>
+        <div class="text-xs text-[#888] leading-relaxed">
+          Pemilu Demokratis Pertama Era Reformasi
+        </div>
+      </div>
+      <div
+        class="glass-panel p-5 rounded-lg text-center card-tilt"
+        style="border: 1px solid rgba(34, 197, 94, 0.25)"
+      >
+        <div class="mono-font text-3xl text-green-500 font-bold mb-3">2000</div>
+        <div class="text-xs text-[#888] leading-relaxed">
+          Stabilisasi Ekonomi Nasional
+        </div>
+      </div>
+      <div
+        class="glass-panel p-5 rounded-lg text-center card-tilt"
+        style="border: 1px solid rgba(34, 197, 94, 0.25)"
+      >
+        <div class="mono-font text-3xl text-green-500 font-bold mb-3">2003</div>
+        <div class="text-xs text-[#888] leading-relaxed">
+          Program IMF Berakhir
+        </div>
+      </div>
+      <div
+        class="glass-panel p-5 rounded-lg text-center card-tilt"
+        style="border: 1px solid rgba(34, 197, 94, 0.25)"
+      >
+        <div class="mono-font text-3xl text-green-500 font-bold mb-3">2004</div>
+        <div class="text-xs text-[#888] leading-relaxed">
+          Pemilihan Presiden Langsung Pertama
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <!-- SECTION 7: RECOVERY -->
+      <section class="relative py-24 px-6 section-reveal" data-section="7">
+        <div class="max-w-6xl mx-auto text-center">
+          <span class="mono-font text-green-600 text-xs tracking-[0.2em]"
+            >BAB VII</span
+          >
+          <h2
+            id="section-6-title"
+            class="headline-font text-4xl md:text-6xl font-black mt-3 mb-8"
+          >
+            RUPIAH DAN<br />
+            INDONESIA SAAT INI
+          </h2>
+          <div
+            class="body-font text-lg text-[#a09080] leading-relaxed max-w-3xl mx-auto mb-12"
+          >
+            <p>
+              Lebih dari dua dekade setelah Krisis Moneter 1998, nilai tukar rupiah masih 
+              menjadi salah satu indikator penting kondisi ekonomi Indonesia. Meskipun 
+              kurs rupiah saat ini berada pada kisaran yang mirip dengan masa krisis, 
+              kondisi ekonomi nasional jauh lebih stabil dibanding tahun 1998.
+            </p>
+            <p class="mt-4">
+              Cadangan devisa yang lebih kuat, sistem perbankan yang lebih sehat, dan
+               pengawasan keuangan yang lebih ketat membuat Indonesia memiliki daya
+                tahan yang lebih baik terhadap gejolak ekonomi global.
+                Namun, pelemahan rupiah tetap memengaruhi harga barang impor, biaya 
+                pendidikan luar negeri, investasi, serta aktivitas perdagangan internasional.
+            </p>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div
+              class="glass-panel p-4 rounded-lg card-tilt"
+              style="border: 1px solid rgba(34, 197, 94, 0.2)"
+            >
+              <div class="mono-font text-xl text-green-500">1997</div>
+              <div class="text-xs text-[#888]">Rp 2.300 / USD</div>
+            </div>
+            <div
+              class="glass-panel p-4 rounded-lg card-tilt"
+              style="border: 1px solid rgba(34, 197, 94, 0.2)"
+            >
+              <div class="mono-font text-xl text-green-500">1998</div>
+              <div class="text-xs text-[#888]">Rp 16.000+ / USD</div>
+            </div>
+            <div
+              class="glass-panel p-4 rounded-lg card-tilt"
+              style="border: 1px solid rgba(34, 197, 94, 0.2)"
+            >
+              <div class="mono-font text-xl text-green-500">Sekarang</div>
+              <div class="text-xs text-[#888]">± Rp 16.000 / USD</div>
+            </div>
+            <div
+              class="glass-panel p-4 rounded-lg card-tilt"
+              style="border: 1px solid rgba(34, 197, 94, 0.2)"
+            >
+              <div class="mono-font text-xl text-green-500">Bedanya?</div>
+              <div class="text-xs text-[#888]">1998 → Krisis Sistemik Nasional <br>Sekarang → Tekanan Ekonomi Global</div>
+            </div>
+          </div>
+          <!-- Closing quote -->
+          <div
+            class="mt-16 glass-panel p-8 rounded-lg max-w-2xl mx-auto"
+            style="border: 1px solid rgba(255, 255, 255, 0.1)"
+          >
+            <div class="serif-font text-2xl italic text-[#ccc] leading-relaxed">
+              "Krisis 1998 mengajarkan bahwa stabilitas ekonomi bukan hanya soal angka, tetapi juga tentang kepercayaan, 
+              transparansi, dan tata kelola yang baik."
+            </div>
+            <div class="mono-font text-xs text-[#666] mt-4">
+              — Bank Indonesia
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Footer -->
+      <footer class="py-12 px-6 border-t border-[#222] text-center">
+        <div class="mono-font text-xs text-[#555] tracking-wider">
+          DOKUMEN SEJARAH EKONOMI INDONESIA • REFORMASI 1998
+        </div>
+      </footer>
+    </div>
+    <script>
+      /* ===== CUSTOM CURSOR ===== */
+      const cursor = document.getElementById("cursor");
+      const ring = document.getElementById("cursor-ring");
+      let mx = 0,
+        my = 0,
+        rx = 0,
+        ry = 0;
+
+      document.addEventListener("mousemove", (e) => {
+        mx = e.clientX;
+        my = e.clientY;
+        cursor.style.left = mx + "px";
+        cursor.style.top = my + "px";
+        createTrail(mx, my);
+      });
+
+      // Ring follows with lag
+      function animateRing() {
+        rx += (mx - rx) * 0.12;
+        ry += (my - ry) * 0.12;
+        ring.style.left = rx + "px";
+        ring.style.top = ry + "px";
+        requestAnimationFrame(animateRing);
+      }
+      animateRing();
+
+      // Cursor expand on hover
+      document
+        .querySelectorAll(
+          "a,button,.headline-card,.collage-cell,.polaroid,.nav-dot",
+        )
+        .forEach((el) => {
+          el.addEventListener("mouseenter", () => {
+            cursor.style.width = "20px";
+            cursor.style.height = "20px";
+            ring.style.width = "60px";
+            ring.style.height = "60px";
+            ring.style.opacity = "0.7";
+          });
+          el.addEventListener("mouseleave", () => {
+            cursor.style.width = "12px";
+            cursor.style.height = "12px";
+            ring.style.width = "40px";
+            ring.style.height = "40px";
+            ring.style.opacity = "1";
+          });
+        });
+
+      // Trail
+      function createTrail(x, y) {
+        const trail = document.getElementById("cursor-trail");
+        const dot = document.createElement("div");
+        dot.className = "trail-dot";
+        dot.style.left = x + "px";
+        dot.style.top = y + "px";
+        trail.appendChild(dot);
+        setTimeout(() => dot.remove(), 600);
+      }
+
+      /* ===== TOP NAV ===== */
+      const currentPage = "materi";
+      document.querySelectorAll(".topnav-btn").forEach((btn) => {
+        if (btn.textContent.toLowerCase().includes(currentPage)) {
+          btn.classList.add("active");
+        } else {
+          btn.classList.remove("active");
+        }
+      });
+    </script>
+    <script>
+      // Config & SDK
+      const defaultConfig = {
+        main_title: "KETIKA RUPIAH RUNTUH",
+        subtitle: "Dari Krisis Moneter 1998 hingga Tantangan Rupiah Masa Kini",
+        background_color: "#0a0505",
+        surface_color: "#1a0a0a",
+        text_color: "#e8ddd0",
+        primary_action: "#dc2626",
+        secondary_action: "#a09080",
+        font_family: "Playfair Display",
+        font_size: 16,
+      };
+
+      let config = { ...defaultConfig };
+
+      function applyConfig(c) {
+        config = { ...defaultConfig, ...c };
+        const app = document.getElementById("app");
+        app.style.backgroundColor = config.background_color;
+        app.style.color = config.text_color;
+
+        const title = document.getElementById("main-title");
+        if (title) {
+          const parts = config.main_title.split(" ");
+          const half = Math.ceil(parts.length / 2);
+          title.innerHTML =
+            parts.slice(0, half).join(" ") +
+            '<br><span class="text-red-600">' +
+            parts.slice(half).join(" ") +
+            "</span>";
+          title.style.fontFamily = config.font_family + ", serif";
+        }
+        const sub = document.getElementById("subtitle");
+        if (sub) {
+          sub.textContent = config.subtitle;
+        }
+
+        // Update section titles
+        if (c.section_1_title && document.getElementById("section-1-title")) {
+          const parts = c.section_1_title.split(" ");
+          const half = Math.ceil(parts.length / 2);
+          document.getElementById("section-1-title").innerHTML =
+            parts.slice(0, half).join(" ") +
+            "<br>" +
+            parts.slice(half).join(" ");
+        }
+        if (c.section_2_title && document.getElementById("section-2-title")) {
+          document.getElementById("section-2-title").textContent =
+            c.section_2_title;
+        }
+        if (c.section_3_title && document.getElementById("section-3-title")) {
+          const parts = c.section_3_title.split(" ");
+          const half = Math.ceil(parts.length / 2);
+          document.getElementById("section-3-title").innerHTML =
+            parts.slice(0, half).join(" ") +
+            "<br>" +
+            parts.slice(half).join(" ");
+        }
+        if (c.section_4_title && document.getElementById("section-4-title")) {
+          const parts = c.section_4_title.split(" ");
+          const half = Math.ceil(parts.length / 2);
+          document.getElementById("section-4-title").innerHTML =
+            parts.slice(0, half).join(" ") +
+            "<br>" +
+            parts.slice(half).join(" ");
+        }
+        if (c.section_5_title && document.getElementById("section-5-title")) {
+          const parts = c.section_5_title.split(" ");
+          const half = Math.ceil(parts.length / 2);
+          document.getElementById("section-5-title").innerHTML =
+            parts.slice(0, half).join(" ") +
+            "<br>" +
+            parts.slice(half).join(" ");
+        }
+        if (c.section_6_title && document.getElementById("section-6-title")) {
+          const parts = c.section_6_title.split(" ");
+          const half = Math.ceil(parts.length / 2);
+          document.getElementById("section-6-title").innerHTML =
+            parts.slice(0, half).join(" ") +
+            "<br>" +
+            parts.slice(half).join(" ");
+        }
+
+        document.querySelectorAll(".headline-font").forEach((el) => {
+          el.style.fontFamily = config.font_family + ", serif";
+        });
+        document.querySelectorAll(".body-font, .serif-font").forEach((el) => {
+          el.style.fontSize = config.font_size + "px";
+        });
+      }
+
+      // Initialize SDK if available
+      if (window.elementSdk) {
+        window.elementSdk.init({
+          defaultConfig,
+          onConfigChange: async (c) => applyConfig(c),
+          mapToCapabilities: (c) => ({
+            recolorables: [
+              {
+                get: () => c.background_color || defaultConfig.background_color,
+                set: (v) => {
+                  c.background_color = v;
+                  window.elementSdk.setConfig({ background_color: v });
+                },
+              },
+              {
+                get: () => c.surface_color || defaultConfig.surface_color,
+                set: (v) => {
+                  c.surface_color = v;
+                  window.elementSdk.setConfig({ surface_color: v });
+                },
+              },
+              {
+                get: () => c.text_color || defaultConfig.text_color,
+                set: (v) => {
+                  c.text_color = v;
+                  window.elementSdk.setConfig({ text_color: v });
+                },
+              },
+              {
+                get: () => c.primary_action || defaultConfig.primary_action,
+                set: (v) => {
+                  c.primary_action = v;
+                  window.elementSdk.setConfig({ primary_action: v });
+                },
+              },
+              {
+                get: () => c.secondary_action || defaultConfig.secondary_action,
+                set: (v) => {
+                  c.secondary_action = v;
+                  window.elementSdk.setConfig({ secondary_action: v });
+                },
+              },
+            ],
+            borderables: [],
+            fontEditable: {
+              get: () => c.font_family || defaultConfig.font_family,
+              set: (v) => {
+                c.font_family = v;
+                window.elementSdk.setConfig({ font_family: v });
+              },
+            },
+            fontSizeable: {
+              get: () => c.font_size || defaultConfig.font_size,
+              set: (v) => {
+                c.font_size = v;
+                window.elementSdk.setConfig({ font_size: v });
+              },
+            },
+          }),
+          mapToEditPanelValues: (c) =>
+            new Map([
+              ["main_title", c.main_title || defaultConfig.main_title],
+              ["subtitle", c.subtitle || defaultConfig.subtitle],
+              ["section_1_title", c.section_1_title || "KOLAPS EKONOMI"],
+              ["section_2_title", c.section_2_title || "KRISIS RUPIAH"],
+              ["section_3_title", c.section_3_title || "KEPANIKAN MASSAL"],
+              [
+                "section_4_title",
+                c.section_4_title || "IMF & UTANG LUAR NEGERI",
+              ],
+              [
+                "section_5_title",
+                c.section_5_title || "DEMONSTRASI & DAMPAK SOSIAL",
+              ],
+              ["section_6_title", c.section_6_title || "PEMULIHAN & TRANSISI"],
+            ]),
+        });
+      } else {
+        // Fallback untuk local testing
+        applyConfig(config);
+      }
+
+      // Floating rupiah notes
+      const notesContainer = document.getElementById("floating-notes");
+      function createNote() {
+        const note = document.createElement("div");
+        note.className = "floating-note";
+        note.style.left = Math.random() * 100 + "%";
+        note.style.animationDuration = 8 + Math.random() * 12 + "s";
+        note.style.animationDelay = Math.random() * 5 + "s";
+        note.style.opacity = 0.15 + Math.random() * 0.1;
+        note.style.fontSize = 10 + Math.random() * 8 + "px";
+        note.className += " mono-font text-red-800";
+        const vals = [
+          "Rp 10.000",
+          "Rp 50.000",
+          "Rp 20.000",
+          "Rp 100.000",
+          "₹",
+          "$",
+        ];
+        note.textContent = vals[Math.floor(Math.random() * vals.length)];
+        notesContainer.appendChild(note);
+        setTimeout(() => note.remove(), 20000);
+      }
+      setInterval(createNote, 2000);
+      for (let i = 0; i < 5; i++) setTimeout(createNote, i * 400);
+
+      // Scroll reveal
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add("visible");
+          });
+        },
+        { threshold: 0.15 },
+      );
+      document
+        .querySelectorAll(".section-reveal")
+        .forEach((el) => observer.observe(el));
+
+      // Card tilt on mouse
+      let mouseX = 0,
+        mouseY = 0;
+      document.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        document.querySelectorAll(".card-tilt").forEach((card) => {
+          const rect = card.getBoundingClientRect();
+          const cx = rect.left + rect.width / 2;
+          const cy = rect.top + rect.height / 2;
+          const dx = (mouseX - cx) / 40;
+          const dy = (mouseY - cy) / 40;
+          const dist = Math.sqrt((mouseX - cx) ** 2 + (mouseY - cy) ** 2);
+          if (dist < 400) {
+            card.style.transform = `perspective(800px) rotateY(${dx * 0.3}deg) rotateX(${-dy * 0.3}deg)`;
+          }
+        });
+      });
+
+      // Rupiah counter animation
+      const counter = document.getElementById("rupiah-counter");
+      let counting = false;
+      const counterObserver = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting && !counting) {
+            counting = true;
+            let val = 2400;
+            const target = 17876;
+            const step = () => {
+              val += Math.ceil((target - val) * 0.03);
+              if (val >= target) {
+                val = target;
+                counter.textContent = "Rp " + val.toLocaleString();
+                return;
+              }
+              counter.textContent = "Rp " + val.toLocaleString();
+              requestAnimationFrame(step);
+            };
+            step();
+          }
+        },
+        { threshold: 0.5 },
+      );
+      counterObserver.observe(counter);
+
+      lucide.createIcons();
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'a02a2b0308c7f8e8',t:'MTc3OTkzODg5Mw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>
